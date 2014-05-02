@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="EntryPointsManager">
+    <entry_points version="2.0" />
+  </component>
+  <component name="IdProvider" IDEtalkID="DE41FCBCA71CAA4601E111B79C7DB5FE" />
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_6" assert-keyword="true" jdk-15="true" project-jdk-name="Android API 19 Platform" project-jdk-type="Android SDK">
+    <output url="file://$PROJECT_DIR$/out" />
+  </component>
+  <component name="RSToolWindow">
+    <option name="dbHost" />
+    <option name="dbPort" />
+    <option name="dbName" />
+    <option name="user" />
+    <option name="password" />
+    <option name="url" />
+  </component>
+</project>
+
