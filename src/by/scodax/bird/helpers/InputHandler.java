@@ -1,6 +1,7 @@
 package by.scodax.bird.helpers;
 
 import by.scodax.bird.GameWorld;
+import by.scodax.bird.control.Direction;
 import by.scodax.bird.model.Numbers;
 import by.scodax.bird.ui.SimpleButton;
 import com.badlogic.gdx.input.GestureDetector;
@@ -72,20 +73,20 @@ public class InputHandler implements GestureDetector.GestureListener {
         if (Math.abs(velocityX) > Math.abs(velocityY)) {
             if (velocityX > 0) {
                 System.out.println("right");
-                numbers.swipeRight();
+                numbers.swipe(Direction.Right);
             } else if (velocityX < 0) {
                 System.out.println("left");
-                numbers.swipeLeft();
+                numbers.swipe(Direction.Left);
             } else {
                 // Do nothing.
             }
         } else {
             if (velocityY > 0) {
                 System.out.println("down");
-                numbers.swipeDown();
+                numbers.swipe(Direction.Down);
             } else if (velocityY < 0) {
                 System.out.println("up");
-                numbers.swipeUp();
+                numbers.swipe(Direction.Up);
             } else {
                 // Do nothing.
             }

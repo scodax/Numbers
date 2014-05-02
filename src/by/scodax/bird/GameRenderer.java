@@ -11,7 +11,6 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.OrthographicCamera;
-import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
@@ -25,6 +24,7 @@ import java.util.List;
  */
 public class GameRenderer {
 
+    public static final int CELL_SIZE = 98;
     private GameWorld myWorld;
     private OrthographicCamera cam;
     private ShapeRenderer shapeRenderer;
@@ -137,13 +137,14 @@ public class GameRenderer {
             Fishka[] column = numbers.getFishki()[i];
             for (int j = 0; j < column.length; j++) {
                 Fishka fishka = column[j];
-                if (fishka.getOldValue() == null)
+                if (fishka.getDisplayedValue() == null)
                     continue;
                 int x = 42 + i * 100;
                 int y = 302 + j * 100;
 
                 batcher.setColor(color.r, color.g, color.b, fishka.getAlpha());
-                batcher.draw(getTextureRegion(fishka), x + fishka.getShiftLeft() * 100 - fishka.getShiftRight() * 100, y + fishka.getShiftUp() * 100 - fishka.getShiftDown() * 100, 98, 98);
+                float zoomDelta = (fishka.getZoom() * CELL_SIZE - CELL_SIZE) / 2;
+                batcher.draw(getTextureRegion(fishka.getDisplayedValue()), x + fishka.getShiftLeft() * 100 - fishka.getShiftRight() * 100 - zoomDelta, y + fishka.getShiftUp() * 100 - fishka.getShiftDown() * 100 - zoomDelta, CELL_SIZE * fishka.getZoom(), CELL_SIZE * fishka.getZoom());
             }
         }
 
@@ -165,9 +166,9 @@ public class GameRenderer {
 
     }
 
-    private TextureRegion getTextureRegion(Fishka fishka) {
+    private TextureRegion getTextureRegion(Integer displayedValue) {
         TextureRegion texture = null;
-        switch (fishka.getOldValue()) {
+        switch (displayedValue) {
             case 2:
                 texture = AssetLoader.f2;
                 break;

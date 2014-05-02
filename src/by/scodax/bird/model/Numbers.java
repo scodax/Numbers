@@ -1,7 +1,6 @@
 package by.scodax.bird.model;
 
-import by.scodax.bird.control.Direction;
-import by.scodax.bird.control.DisappearInTask;
+import by.scodax.bird.control.*;
 
 import java.util.LinkedList;
 import java.util.List;
@@ -34,11 +33,11 @@ public class Numbers {
 //    }
 
     public void init() {
-        generateFishka();
-        generateFishka();
+        generateFishka(0);
+        generateFishka(0);
     }
 
-    private void generateFishka() {
+    private void generateFishka(float swipeTime) {
         List<Integer> freeCells = new LinkedList<Integer>();
         for (int i = 0; i < fishki.length; i++) {
             Fishka[] column = fishki[i];
@@ -51,191 +50,193 @@ public class Numbers {
         if (!freeCells.isEmpty()) {
             int i = random.nextInt(freeCells.size());
             Integer freeCellNumber = freeCells.get(i);
-            fishki[freeCellNumber % 4][freeCellNumber / 4] = new Fishka(random.nextInt(3) == 2 ? 4 : 2, true);
+            int value = random.nextInt(3) == 2 ? 4 : 2;
+            Fishka fishka = fishki[freeCellNumber % 4][freeCellNumber / 4];
+            fishka.setValue(value);
+            fishka.addTask(new WaitTask(swipeTime));
+            fishka.addTask(new SetDiplayedValueTask(value, fishka));
+            fishka.addTask(new NewbieTask());
         }
     }
 
-    public void swipeLeft() {
-        boolean swipeDone = false;
+    public void swipe(Direction direction) {
+        float swipeTime = 0;
         for (int i = 0; i < fishki.length; i++) {
-            swipeDone |= shiftRowLeft(i);
-            swipeDone |= sumRowLeft(i);
-            swipeDone |= shiftRowLeft(i);
+            switch (direction) {
+                case Left:
+                    swipeTime = Math.max(swipeTime, shiftRowLeft(i));
+                    swipeTime = Math.max(swipeTime, sumRowLeft(i));
+                    swipeTime = Math.max(swipeTime, shiftRowLeft(i));
+                    break;
+                case Right:
+                    swipeTime = Math.max(swipeTime, shiftRowRight(i));
+                    swipeTime = Math.max(swipeTime, sumRowRight(i));
+                    swipeTime = Math.max(swipeTime, shiftRowRight(i));
+                    break;
+                case Up:
+                    swipeTime = Math.max(swipeTime, shiftColumnUp(i));
+                    swipeTime = Math.max(swipeTime, sumColumnUp(i));
+                    swipeTime = Math.max(swipeTime, shiftColumnUp(i));
+                    break;
+                case Down:
+                    swipeTime = Math.max(swipeTime, shiftColumnDown(i));
+                    swipeTime = Math.max(swipeTime, sumColumnDown(i));
+                    swipeTime = Math.max(swipeTime, shiftColumnDown(i));
+                    break;
+            }
         }
-        if (swipeDone)
-            generateFishka();
+        if (swipeTime > 0)
+            generateFishka(swipeTime);
     }
 
-    private boolean shiftRowLeft(int i) {
-        boolean swipeDone = false;
+    private float shiftRowLeft(int i) {
+        float time = 0;
         for (int j = 0; j < 3; j++) {
             Fishka cell = fishki[j][i];
             if (cell.isEmpty()) {
                 for (int k = j + 1; k < 4; k++) {
                     Fishka nextCell = fishki[k][i];
                     if (!nextCell.isEmpty()) {
-                        cell.setValue(nextCell.getValue());
-                        nextCell.setValue(null);
-                        swipeDone = true;
-                        cell.addShiftLeft(k - j);
+                        shiftCells(cell, nextCell, k - j, Direction.Left);
+                        time = Math.max(time, cell.getSubmittedShiftTime());
+                        time = Math.max(time, nextCell.getSubmittedShiftTime());
                         break;
                     }
                 }
             }
         }
-        return swipeDone;
+        return time;
     }
 
-    private boolean sumRowLeft(int i) {
-        boolean swipeDone = false;
+    private void shiftCells(Fishka cell, Fishka nextCell, int shift, Direction direction) {
+        cell.setValue(nextCell.getValue());
+        cell.addTask(new SetDiplayedValueTask(cell.getValue(), cell));
+        nextCell.setValue(null);
+        nextCell.addTask(new SetDiplayedValueTask(null, nextCell));
+        cell.addTask(new ShiftTask(shift, direction));
+    }
+
+    private float sumRowLeft(int i) {
+        float time = 0;
         for (int j = 0; j < 3; j++) {
             Fishka cell = fishki[j][i];
             Fishka nextCell = fishki[j + 1][i];
             if (!cell.isEmpty() && !nextCell.isEmpty() && cell.equals(nextCell)) {
-                cell.setValue(cell.getValue() * 2);
-                nextCell.setValue(null);
-                nextCell.addTask(new DisappearInTask(nextCell, 1, cell.getSubmittedShiftTime(), Direction.Left));
-                swipeDone = true;
+                sumCells(cell, nextCell, Direction.Left);
+                time = Math.max(time, cell.getSubmittedShiftTime());
+                time = Math.max(time, nextCell.getSubmittedShiftTime());
             }
         }
-        return swipeDone;
-    }
-    public void swipeDown() {
-        boolean swipeDone = false;
-        for (int i = 0; i < fishki.length; i++) {
-            swipeDone |= shiftColumnDown(i);
-            swipeDone |= sumColumnDown(i);
-            swipeDone |= shiftColumnDown(i);
-        }
-        if (swipeDone)
-            generateFishka();
+        return time;
     }
 
-    private boolean shiftColumnDown(int i) {
-        boolean swipeDone = false;
+    private void sumCells(Fishka cell, Fishka nextCell, Direction direction) {
+        cell.setValue(cell.getValue() * 2);
+        nextCell.setValue(null);
+        nextCell.addTask(new ShiftTask(1, direction));
+        nextCell.addTask(new SetDiplayedValueTask(null, nextCell));
+        cell.addTask(new WaitTask(nextCell.getSubmittedShiftTime()));
+        cell.addTask(new SetDiplayedValueTask(cell.getValue(), cell));
+        cell.addTask(new ZoomTask());
+    }
+
+    private float shiftColumnDown(int i) {
+        float time = 0;
         for (int j = 3; j > 0; j--) {
             Fishka cell = fishki[i][j];
             if (cell.isEmpty()) {
                 for (int k = j - 1; k >= 0; k--) {
                     Fishka nextCell = fishki[i][k];
                     if (!nextCell.isEmpty()) {
-                        cell.setValue(nextCell.getValue());
-                        cell.addShiftDown(j - k);
-                        nextCell.setValue(null);
-                        swipeDone = true;
+                        shiftCells(cell, nextCell, j - k, Direction.Down);
+                        time = Math.max(time, cell.getSubmittedShiftTime());
+                        time = Math.max(time, nextCell.getSubmittedShiftTime());
                         break;
                     }
                 }
             }
         }
-        return swipeDone;
+        return time;
     }
 
-    private boolean sumColumnDown(int i) {
-        boolean swipeDone = false;
+    private float sumColumnDown(int i) {
+        float time = 0;
         for (int j = 3; j > 0; j--) {
             Fishka cell = fishki[i][j];
             Fishka nextCell = fishki[i][j - 1];
             if (!cell.isEmpty() && !nextCell.isEmpty() && cell.equals(nextCell)) {
-                cell.setValue(cell.getValue() * 2);
-                nextCell.setValue(null);
-                nextCell.addTask(new DisappearInTask(nextCell, 1, cell.getSubmittedShiftTime(), Direction.Down));
-                swipeDone = true;
+                sumCells(cell, nextCell, Direction.Down);
+                time = Math.max(time, cell.getSubmittedShiftTime());
+                time = Math.max(time, nextCell.getSubmittedShiftTime());
             }
         }
-        return swipeDone;
+        return time;
     }
 
-    public void swipeRight() {
-        boolean swipeDone = false;
-        for (int i = 0; i < fishki.length; i++) {
-            swipeDone |= shiftRowRight(i);
-            swipeDone |= sumRowRight(i);
-            swipeDone |= shiftRowRight(i);
-        }
-        if (swipeDone)
-            generateFishka();
-    }
-
-    private boolean shiftRowRight(int i) {
-        boolean swipeDone = false;
+    private float shiftRowRight(int i) {
+        float time = 0;
         for (int j = 3; j > 0; j--) {
             Fishka cell = fishki[j][i];
             if (cell.isEmpty()) {
                 for (int k = j - 1; k >= 0; k--) {
                     Fishka nextCell = fishki[k][i];
                     if (!nextCell.isEmpty()) {
-                        cell.setValue(nextCell.getValue());
-                        cell.addShiftRight(j - k);
-                        nextCell.setValue(null);
-                        swipeDone = true;
+                        shiftCells(cell, nextCell, j - k, Direction.Right);
+                        time = Math.max(time, cell.getSubmittedShiftTime());
+                        time = Math.max(time, nextCell.getSubmittedShiftTime());
                         break;
                     }
                 }
             }
         }
-        return swipeDone;
+        return time;
     }
 
-    private boolean sumRowRight(int i) {
-        boolean swipeDone = false;
+    private float sumRowRight(int i) {
+        float time = 0;
         for (int j = 3; j > 0; j--) {
             Fishka cell = fishki[j][i];
             Fishka nextCell = fishki[j - 1][i];
             if (!cell.isEmpty() && !nextCell.isEmpty() && cell.equals(nextCell)) {
-                cell.setValue(cell.getValue() * 2);
-                nextCell.setValue(null);
-                nextCell.addTask(new DisappearInTask(nextCell, 1, cell.getSubmittedShiftTime(), Direction.Right));
-                swipeDone = true;
+                sumCells(cell, nextCell, Direction.Right);
+                time = Math.max(time, cell.getSubmittedShiftTime());
+                time = Math.max(time, nextCell.getSubmittedShiftTime());
             }
         }
-        return swipeDone;
+        return time;
     }
 
-    public void swipeUp() {
-        boolean swipeDone = false;
-        for (int i = 0; i < fishki.length; i++) {
-            swipeDone |= shiftColumnUp(i);
-            swipeDone |= sumColumnUp(i);
-            swipeDone |= shiftColumnUp(i);
-        }
-        if (swipeDone)
-            generateFishka();
-    }
-
-    private boolean shiftColumnUp(int i) {
-        boolean swipeDone = false;
+    private float shiftColumnUp(int i) {
+        float time = 0;
         for (int j = 0; j < 3; j++) {
             Fishka cell = fishki[i][j];
             if (cell.isEmpty()) {
                 for (int k = j + 1; k < 4; k++) {
                     Fishka nextCell = fishki[i][k];
                     if (!nextCell.isEmpty()) {
-                        cell.setValue(nextCell.getValue());
-                        cell.addShiftUp(k - j);
-                        nextCell.setValue(null);
-                        swipeDone = true;
+                        shiftCells(cell, nextCell, k - j, Direction.Up);
+                        time = Math.max(time, cell.getSubmittedShiftTime());
+                        time = Math.max(time, nextCell.getSubmittedShiftTime());
                         break;
                     }
                 }
             }
         }
-        return swipeDone;
+        return time;
     }
 
-    private boolean sumColumnUp(int i) {
-        boolean swipeDone = false;
+    private float sumColumnUp(int i) {
+        float time = 0;
         for (int j = 0; j < 3; j++) {
             Fishka cell = fishki[i][j];
             Fishka nextCell = fishki[i][j + 1];
             if (!cell.isEmpty() && !nextCell.isEmpty() && cell.equals(nextCell)) {
-                cell.setValue(cell.getValue() * 2);
-                nextCell.setValue(null);
-                nextCell.addTask(new DisappearInTask(nextCell, 1, cell.getSubmittedShiftTime(), Direction.Up));
-                swipeDone = true;
+                sumCells(cell, nextCell, Direction.Up);
+                time = Math.max(time, cell.getSubmittedShiftTime());
+                time = Math.max(time, nextCell.getSubmittedShiftTime());
             }
         }
-        return swipeDone;
+        return time;
     }
 
     public Fishka[][] getFishki() {

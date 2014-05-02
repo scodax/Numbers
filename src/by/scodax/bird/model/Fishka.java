@@ -11,7 +11,7 @@ import java.util.List;
  */
 public class Fishka {
     private Integer value = null;
-    private Integer oldValue = null;
+    private Integer displayedValue = null;
     private float alpha = 1;
 
     private float shiftLeft = 0;
@@ -19,15 +19,14 @@ public class Fishka {
     private float shiftUp = 0;
     private float shiftDown = 0;
 
-    private float disappearShift = 0;
-
     private List<Task> tasks = new LinkedList<Task>();
+    private float zoom = 1;
 
     public Fishka(Integer value, boolean newbie) {
         this.value = value;
-        this.oldValue = value;
+        this.displayedValue = value;
         if (newbie) {
-            tasks.add(new NewbieTask(this));
+            tasks.add(new NewbieTask());
         }
     }
 
@@ -39,9 +38,6 @@ public class Fishka {
     }
 
     public void setValue(Integer value) {
-//        if (this.value == null) {
-            oldValue = value;
-//        }
         this.value = value;
     }
 
@@ -70,14 +66,11 @@ public class Fishka {
         Iterator<Task> it = tasks.iterator();
         while (it.hasNext()) {
             Task task = it.next();
-            if (task.execute(delta)) {
+            if (task.execute(delta, this)) {
                 it.remove();
             } else {
                 break;
             }
-        }
-        if (tasks.isEmpty()) {
-            oldValue = value;
         }
     }
 
@@ -89,36 +82,20 @@ public class Fishka {
         return shiftLeft;
     }
 
-    public void addShiftLeft(float shiftLeft) {
-        tasks.add(new ShiftLeftTask(this, shiftLeft));
-    }
-
     public float getShiftRight() {
         return shiftRight;
-    }
-
-    public void addShiftRight(float shiftRight) {
-        tasks.add(new ShiftRightTask(this, shiftRight));
     }
 
     public float getShiftUp() {
         return shiftUp;
     }
 
-    public void addShiftUp(float shiftUp) {
-        tasks.add(new ShiftUpTask(this, shiftUp));
-    }
-
     public float getShiftDown() {
         return shiftDown;
     }
 
-    public void addShiftDown(float shiftDown) {
-        tasks.add(new ShiftDownTask(this, shiftDown));
-    }
-
-    public Integer getOldValue() {
-        return oldValue;
+    public Integer getDisplayedValue() {
+        return displayedValue;
     }
 
     public void setShiftLeft(float shiftLeft) {
@@ -141,19 +118,27 @@ public class Fishka {
         this.alpha = alpha;
     }
 
-    public void setOldValue(Integer oldValue) {
-        this.oldValue = oldValue;
-    }
-
     public float getSubmittedShiftTime() {
         float ret = 0;
         for (Task task : tasks) {
-            ret += task.getShiftTime();
+            ret += task.getTime();
         }
         return ret;
     }
 
     public void addTask(Task task) {
         tasks.add(task);
+    }
+
+    public void setZoom(float zoom) {
+        this.zoom = zoom;
+    }
+
+    public float getZoom() {
+        return zoom;
+    }
+
+    public void setDisplayedValue(Integer displayedValue) {
+        this.displayedValue = displayedValue;
     }
 }
