@@ -10,19 +10,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="023cbf31-5db7-46ff-8362-2473524198d4" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/field.psd" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/libs/gdx-freetype-natives.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/libs/gdx-freetype.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/libs/armeabi/libgdx-freetype.so" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/libs/armeabi-v7a/libgdx-freetype.so" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/libs/x86/libgdx-freetype.so" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/data/mecha.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/data/mecha_0.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/data/mecha.fnt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/data/field.png" afterPath="$PROJECT_DIR$/assets/data/field.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/by/scodax/bird/helpers/AssetLoader.java" afterPath="$PROJECT_DIR$/src/by/scodax/bird/helpers/AssetLoader.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/by/scodax/bird/GameRenderer.java" afterPath="$PROJECT_DIR$/src/by/scodax/bird/GameRenderer.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Numbers.iml" afterPath="$PROJECT_DIR$/Numbers.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Numbers.iws" />
@@ -795,7 +782,11 @@
       <created>1399043061419</created>
       <updated>1399043061419</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="1&#10;">
+      <created>1399126070022</created>
+      <updated>1399126070022</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
