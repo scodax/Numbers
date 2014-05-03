@@ -113,7 +113,7 @@
       <file leaf-file-name="GameRenderer.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/by/scodax/bird/GameRenderer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="121" column="85" selection-start="3474" selection-end="3474" vertical-scroll-proportion="0.53125" vertical-offset="1479" max-vertical-offset="3196">
+            <state line="114" column="33" selection-start="2970" selection-end="2970" vertical-scroll-proportion="0.3246528" vertical-offset="1479" max-vertical-offset="3196">
               <folding />
             </state>
           </provider>
@@ -365,7 +365,7 @@
     <property name="OverrideImplement.overriding.sorted" value="false" />
     <property name="extract.method.default.visibility" value="private" />
     <property name="FullScreen" value="false" />
-    <property name="options.lastSelected" value="preferences.pluginManager" />
+    <property name="options.lastSelected" value="project.propVCSSupport.Mappings" />
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="options.splitter.details.proportions" value="0.2" />
     <property name="options.searchVisible" value="true" />
@@ -649,7 +649,7 @@
       <workItem from="1398543371278" duration="4571000" />
       <workItem from="1398590111074" duration="8222000" />
       <workItem from="1398625509653" duration="9402000" />
-      <workItem from="1399146888821" duration="7826000" />
+      <workItem from="1399146888821" duration="8003000" />
     </task>
     <task id="LOCAL-00001" summary="1">
       <created>1399023801431</created>
@@ -683,15 +683,19 @@
       <created>1399155353878</created>
       <updated>1399155353878</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="1&#10;">
+      <created>1399155377109</created>
+      <updated>1399155377109</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="30021000" />
+    <option name="totallyTimeSpent" value="30198000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32850778" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -715,7 +719,7 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.11727079" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.11727079" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32850778" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Documentation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" x="92" y="92" width="1736" height="856" />
       <window_info id="RequestSender" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32941177" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
@@ -1088,7 +1092,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/by/scodax/bird/GameRenderer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="121" column="85" selection-start="3474" selection-end="3474" vertical-scroll-proportion="0.53125" vertical-offset="1479" max-vertical-offset="3196">
+        <state line="114" column="33" selection-start="2970" selection-end="2970" vertical-scroll-proportion="0.3246528" vertical-offset="1479" max-vertical-offset="3196">
           <folding />
         </state>
       </provider>
