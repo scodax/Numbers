@@ -11,22 +11,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="023cbf31-5db7-46ff-8362-2473524198d4" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Screenshot_2014-05-03-20-56-04.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/data/best.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/data/patrick.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/patrick.psd" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/data/score.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/score.psd" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/by/scodax/bird/control/AddScoreTask.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/by/scodax/bird/control/CompositeTask.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/drawable-hdpi/ic_launcher.png" afterPath="$PROJECT_DIR$/res/drawable-hdpi/ic_launcher.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/by/scodax/bird/helpers/AssetLoader.java" afterPath="$PROJECT_DIR$/src/by/scodax/bird/helpers/AssetLoader.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gen/by/scodax/numbers/BuildConfig.java" afterPath="$PROJECT_DIR$/gen/by/scodax/numbers/BuildConfig.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/by/scodax/bird/helpers/ColorUtils.java" afterPath="$PROJECT_DIR$/src/by/scodax/bird/helpers/ColorUtils.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/by/scodax/bird/GameRenderer.java" afterPath="$PROJECT_DIR$/src/by/scodax/bird/GameRenderer.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/by/scodax/bird/model/Numbers.java" afterPath="$PROJECT_DIR$/src/by/scodax/bird/model/Numbers.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/by/scodax/bird/control/ShiftTask.java" afterPath="$PROJECT_DIR$/src/by/scodax/bird/control/ShiftTask.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/by/scodax/bird/control/Task.java" afterPath="$PROJECT_DIR$/src/by/scodax/bird/control/Task.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Numbers.iws" />
@@ -665,7 +649,7 @@
       <workItem from="1398543371278" duration="4571000" />
       <workItem from="1398590111074" duration="8222000" />
       <workItem from="1398625509653" duration="9402000" />
-      <workItem from="1399146888821" duration="7775000" />
+      <workItem from="1399146888821" duration="7803000" />
     </task>
     <task id="LOCAL-00001" summary="1">
       <created>1399023801431</created>
@@ -691,11 +675,15 @@
       <created>1399129338874</created>
       <updated>1399129338874</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="1&#10;">
+      <created>1399155341292</created>
+      <updated>1399155341292</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="29970000" />
+    <option name="totallyTimeSpent" value="29998000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
