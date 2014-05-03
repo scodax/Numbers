@@ -8,18 +8,24 @@ import by.scodax.bird.model.Fishka;
 public class ShiftTask implements Task {
 
     private float shift;
+    private float shiftTo;
     private final Direction direction;
 
-    public ShiftTask(float shift, Direction direction) {
+    public ShiftTask(float shift,float shiftTo, Direction direction) {
         this.shift = shift;
+        this.shiftTo = shiftTo;
         this.direction = direction;
+    }
+
+    public ShiftTask(float shift, Direction direction) {
+        this(shift, 0, direction);
     }
 
     @Override
     public boolean execute(float delta, Fishka fishka) {
         boolean done = false;
         shift -= delta * SHIFT_SPEED;
-        if (shift < 0.0) {
+        if (shift < shiftTo) {
             shift = 0;
             done = true;
         }

@@ -1,6 +1,7 @@
 package by.scodax.bird.model;
 
 import by.scodax.bird.control.*;
+import by.scodax.bird.helpers.AssetLoader;
 
 import java.util.LinkedList;
 import java.util.List;
@@ -13,6 +14,8 @@ public class Numbers {
 
     private Random random = new Random();
     private Fishka[][] fishki = new Fishka[4][4];
+
+    private int score = 0;
 
     public Numbers() {
         for (int i = 0; i < fishki.length; i++) {
@@ -133,11 +136,11 @@ public class Numbers {
     private void sumCells(Fishka cell, Fishka nextCell, Direction direction) {
         cell.setValue(cell.getValue() * 2);
         nextCell.setValue(null);
-        nextCell.addTask(new ShiftTask(1, direction));
-        nextCell.addTask(new SetDiplayedValueTask(null, nextCell));
+//        nextCell.addTask(new ShiftTask(0, -1, direction));
+        nextCell.addTask(new CompositeTask(new ShiftTask(0, -1, direction), new SetDiplayedValueTask(null, nextCell), new SetDiplayedValueTask(cell.getValue(), cell)));
         cell.addTask(new WaitTask(nextCell.getSubmittedShiftTime()));
-        cell.addTask(new SetDiplayedValueTask(cell.getValue(), cell));
-        cell.addTask(new ZoomTask());
+//        cell.addTask(new SetDiplayedValueTask(cell.getValue(), cell));
+        cell.addTask(new CompositeTask(new AddScoreTask(cell.getValue(), this), new ZoomTask()));
     }
 
     private float shiftColumnDown(int i) {
@@ -251,5 +254,16 @@ public class Numbers {
                 fishka.update(delta);
             }
         }
+    }
+
+    public void addScore(int value) {
+        score += value;
+        if (score > AssetLoader.getHighScore()) {
+            AssetLoader.setHighScore(score);
+        }
+    }
+
+    public int getScore() {
+        return score;
     }
 }

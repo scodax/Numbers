@@ -14,13 +14,11 @@ import com.badlogic.gdx.graphics.g2d.TextureRegion;
  */
 public class AssetLoader {
 
-    public static Texture texture, logoTexture, birdTexture, bgTexture, fieldTexture;
-    public static TextureRegion logo, zbLogo, bg, grass, bird, birdDown,
-            birdUp, skullUp, skullDown, bar, playButtonUp, playButtonDown,
-            ready, gameOver, highScore, scoreboard, star, noStar, retry, tetrad, field;
-    public static Animation birdAnimation;
+    public static Texture texture, logoTexture, fieldTexture, scoreCurrentTexture, scoreHighTexture, patrickTexture;
+    public static TextureRegion logo, zbLogo, bg, skullUp, skullDown, bar, playButtonUp, playButtonDown,
+            ready, gameOver, highScore, scoreboard, star, noStar, retry, field, scoreCurrent, scoreHigh, patrick;
     public static Sound dead, flap, coin, fall;
-    public static BitmapFont blackFont, shadow, whiteFont;
+    public static BitmapFont blackFont, whiteFont, scoreFont;
     private static Preferences prefs;
 
     public static void load() {
@@ -33,14 +31,17 @@ public class AssetLoader {
         texture = new Texture(Gdx.files.internal("data/texture.png"));
         texture.setFilter(Texture.TextureFilter.Nearest, Texture.TextureFilter.Nearest);
 
-        birdTexture = new Texture(Gdx.files.internal("data/angrybird.png"));
-        birdTexture.setFilter(Texture.TextureFilter.Nearest, Texture.TextureFilter.Nearest);
+        scoreCurrentTexture = new Texture(Gdx.files.internal("data/score.png"));
+        scoreCurrentTexture.setFilter(Texture.TextureFilter.Nearest, Texture.TextureFilter.Nearest);
 
-        bgTexture = new Texture(Gdx.files.internal("data/tetrad.png"));
-        bgTexture.setFilter(Texture.TextureFilter.Nearest, Texture.TextureFilter.Nearest);
+        scoreHighTexture = new Texture(Gdx.files.internal("data/best.png"));
+        scoreHighTexture.setFilter(Texture.TextureFilter.Nearest, Texture.TextureFilter.Nearest);
 
         fieldTexture = new Texture(Gdx.files.internal("data/field.png"));
         fieldTexture.setFilter(Texture.TextureFilter.Nearest, Texture.TextureFilter.Nearest);
+
+        patrickTexture = new Texture(Gdx.files.internal("data/patrick.png"));
+        patrickTexture.setFilter(Texture.TextureFilter.Nearest, Texture.TextureFilter.Nearest);
 
         playButtonUp = new TextureRegion(texture, 0, 83, 29, 16);
         playButtonDown = new TextureRegion(texture, 29, 83, 29, 16);
@@ -74,27 +75,17 @@ public class AssetLoader {
         bg = new TextureRegion(texture, 0, 0, 136, 43);
         bg.flip(false, true);
 
-        tetrad = new TextureRegion(bgTexture, 0, 0, 136, 170);
-        tetrad.flip(false, true);
-
-        grass = new TextureRegion(texture, 0, 43, 143, 11);
-        grass.flip(false, true);
-
         field = new TextureRegion(fieldTexture, 0, 0, 400, 400);
         field.flip(false, true);
 
-        birdDown = new TextureRegion(birdTexture, 0, 0, 34, 24);
-        birdDown.flip(false, true);
+        scoreCurrent = new TextureRegion(scoreCurrentTexture, 120, 60);
+        scoreCurrent.flip(false, true);
 
-        bird = new TextureRegion(birdTexture, 34, 0, 34, 24);
-        bird.flip(false, true);
+        scoreHigh = new TextureRegion(scoreHighTexture, 120, 60);
+        scoreHigh.flip(false, true);
 
-        birdUp = new TextureRegion(birdTexture, 68, 0, 34, 24);
-        birdUp.flip(false, true);
-
-        TextureRegion[] birds = {birdDown, bird, birdUp};
-        birdAnimation = new Animation(0.06f, birds);
-        birdAnimation.setPlayMode(Animation.PlayMode.LOOP_PINGPONG);
+        patrick = new TextureRegion(patrickTexture, 140, 105);
+        patrick.flip(false, true);
 
         skullUp = new TextureRegion(texture, 192, 0, 24, 14);
         // Create by flipping existing skullUp
@@ -111,17 +102,18 @@ public class AssetLoader {
 
         blackFont = new BitmapFont(Gdx.files.internal("data/mecha.fnt"));
         blackFont.setScale(.3f, -.3f);
-        blackFont.setColor(Color.valueOf("70675f"));
+        blackFont.setColor(Color.valueOf("736d6b"));
+
+        scoreFont  = new BitmapFont(Gdx.files.internal("data/mecha.fnt"));
+        scoreFont.setScale(.2f, -.2f);
+        scoreFont.setColor(Color.valueOf("f7f3ef"));
 
         whiteFont  = new BitmapFont(Gdx.files.internal("data/mecha.fnt"));
-        whiteFont.setScale(.35f, -.35f);
-        whiteFont.setColor(Color.valueOf("fff9e4"));
-
-        shadow = new BitmapFont(Gdx.files.internal("data/shadow.fnt"));
-        shadow.setScale(.25f, -.25f);
+        whiteFont.setScale(.3f, -.3f);
+        whiteFont.setColor(Color.valueOf("f7f3ef"));
 
         // Create (or retrieve existing) preferences file
-        prefs = Gdx.app.getPreferences("ZombieBird");
+        prefs = Gdx.app.getPreferences("Numbers2048");
 
         if (!prefs.contains("highScore")) {
             prefs.putInteger("highScore", 0);
@@ -147,7 +139,6 @@ public class AssetLoader {
         coin.dispose();
 
         blackFont.dispose();
-        shadow.dispose();
     }
 
 }

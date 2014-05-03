@@ -95,15 +95,6 @@ public class GameRenderer {
 
     }
 
-
-    private void drawScore() {
-        int length = ("" + myWorld.getScore()).length();
-        AssetLoader.shadow.draw(batcher, "" + myWorld.getScore(),
-                68 - (3 * length), midPointY - 82);
-        AssetLoader.blackFont.draw(batcher, "" + myWorld.getScore(),
-                68 - (3 * length), midPointY - 83);
-    }
-
     public void render(float delta, float runTime) {
 
         Gdx.gl.glClearColor(0, 0, 0, 1);
@@ -121,6 +112,17 @@ public class GameRenderer {
         batcher.disableBlending();
 
         batcher.draw(field, 40, 300, 400, 400);
+        batcher.enableBlending();
+        batcher.draw(AssetLoader.scoreCurrent, 192, 70, 120, 60);
+        batcher.draw(AssetLoader.scoreHigh, 320, 70, 120, 60);
+        String scoreS = "" + numbers.getScore();
+        BitmapFont.TextBounds scoreSBounds = AssetLoader.scoreFont.getBounds(scoreS);
+        AssetLoader.scoreFont.draw(batcher, scoreS, 192 + 60 - scoreSBounds.width / 2, 100);
+        String highScoreS = "" + AssetLoader.getHighScore();
+        BitmapFont.TextBounds highScoreSBounds = AssetLoader.scoreFont.getBounds(highScoreS);
+        AssetLoader.scoreFont.draw(batcher, highScoreS, 320 + 60 - highScoreSBounds.width / 2, 100);
+
+        batcher.draw(AssetLoader.patrick, 40, 35, 140, 105);
         batcher.end();
 
 
@@ -162,7 +164,8 @@ public class GameRenderer {
             font = AssetLoader.blackFont;
         else
             font = AssetLoader.whiteFont;
-        font.draw(batcher, s, x + 45 - FONT_SIZE * s.length() / 2, y + 45 - FONT_SIZE);
+        BitmapFont.TextBounds bounds = font.getBounds(s);
+        font.draw(batcher, s, x + (CELL_SIZE - bounds.width) / 2, y + CELL_SIZE / 2 + bounds.height / 2);
 
         batcher.end();
     }

@@ -9,18 +9,18 @@ import com.badlogic.gdx.graphics.Color;
  */
 public class ColorUtils {
 
-    public static final Color COLOR_BACKGROUND = Color.valueOf("faf8ef");
-    public static final Color COLOR_2 = Color.valueOf("eee4da");
-    public static final Color COLOR_4 = Color.valueOf("ede0c8");
-    public static final Color COLOR_8 = Color.valueOf("f2b179");
-    public static final Color COLOR_16 = Color.valueOf("f59563");
-    public static final Color COLOR_32 = Color.valueOf("f67c60");
-    public static final Color COLOR_64 = Color.valueOf("f65e3c");
-    public static final Color COLOR_128 = Color.valueOf("edce72");
-    public static final Color COLOR_256 = Color.valueOf("edcc61");
-    public static final Color COLOR_512 = Color.valueOf("ebc852");
+    public static final Color COLOR_BACKGROUND = Color.valueOf("f7f7ef");
+    public static final Color COLOR_2 = Color.valueOf("efe3d6");
+    public static final Color COLOR_4 = Color.valueOf("efdfc6");
+    public static final Color COLOR_8 = Color.valueOf("f7ae7b");
+    public static final Color COLOR_16 = Color.valueOf("f79663");
+    public static final Color COLOR_32 = Color.valueOf("f77d5a");
+    public static final Color COLOR_64 = Color.valueOf("f75d39");
+    public static final Color COLOR_128 = Color.valueOf("efcf73");
+    public static final Color COLOR_256 = Color.valueOf("efcf63");
+    public static final Color COLOR_512 = Color.valueOf("efc752");
     public static final Color COLOR_1024 = Color.valueOf("ede136");
-    public static final Color COLOR_2048 = Color.valueOf("edc22e");
+    public static final Color COLOR_2048 = Color.valueOf("efc331");
     public static final Color COLOR_4096 = Color.valueOf("b784ab");
 
     public static Color getFishkaColor(Integer displayedValue) {
