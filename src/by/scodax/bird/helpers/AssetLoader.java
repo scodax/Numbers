@@ -3,10 +3,12 @@ package by.scodax.bird.helpers;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Preferences;
 import com.badlogic.gdx.audio.Sound;
+import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Animation;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
+import com.badlogic.gdx.graphics.g2d.freetype.FreeTypeFontGenerator;
 
 /**
  * Created by patrick on 24.04.14.
@@ -145,11 +147,13 @@ public class AssetLoader {
         coin = Gdx.audio.newSound(Gdx.files.internal("data/coin.wav"));
         fall = Gdx.audio.newSound(Gdx.files.internal("data/fall.wav"));
 
-        font = new BitmapFont(Gdx.files.internal("data/text.fnt"));
-        font.setScale(.25f, -.25f);
+        font = new BitmapFont(Gdx.files.internal("data/mecha.fnt"));
+        font.setScale(.35f, -.35f);
+        font.setColor(Color.BLACK);
 
-        whiteFont = new BitmapFont(Gdx.files.internal("data/whitetext.fnt"));
-        whiteFont.setScale(.1f, -.1f);
+        whiteFont  = new BitmapFont(Gdx.files.internal("data/mecha.fnt"));
+        whiteFont.setScale(.35f, -.35f);
+        whiteFont.setColor(Color.WHITE);
 
         shadow = new BitmapFont(Gdx.files.internal("data/shadow.fnt"));
         shadow.setScale(.25f, -.25f);
