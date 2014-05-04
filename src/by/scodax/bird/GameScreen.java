@@ -3,6 +3,7 @@ package by.scodax.bird;
 import by.scodax.bird.helpers.InputHandler;
 import by.scodax.bird.model.Numbers;
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.InputMultiplexer;
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.input.GestureDetector;
 
@@ -19,14 +20,15 @@ public class GameScreen implements Screen {
         float screenHeight = Gdx.graphics.getHeight();
         float gameWidth = 480;
         float gameHeight = screenHeight / (screenWidth / gameWidth);
-        int midPointY = (int) (gameHeight / 2);
 
         Numbers numbers = new Numbers();
         numbers.init();
-        world = new GameWorld(midPointY,numbers);
-        Gdx.input.setInputProcessor(new GestureDetector(20, 0.5f, 2, 0.15f, new InputHandler(world, screenWidth / gameWidth, screenHeight / gameHeight, numbers)));
+        world = new GameWorld(numbers);
+        InputHandler inputHandler = new InputHandler(world, screenWidth / gameWidth, screenHeight / gameHeight, numbers);
+        Gdx.input.setInputProcessor(new InputMultiplexer(new GestureDetector(20, 0.5f, 2, 0.15f, inputHandler), inputHandler));
+        Gdx.input.setCatchBackKey(true);
 
-        renderer = new GameRenderer(world, (int) gameHeight, midPointY, numbers);
+        renderer = new GameRenderer(world, (int) gameHeight, numbers, inputHandler);
         world.setRenderer(renderer);
     }
 

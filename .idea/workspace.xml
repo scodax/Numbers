@@ -7,10 +7,25 @@
   </component>
   <component name="AndroidLogFilters">
     <option name="TOOL_WINDOW_CUSTOM_FILTER" value="numbers" />
-    <option name="TOOL_WINDOW_LOG_LEVEL" value="ERROR" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="023cbf31-5db7-46ff-8362-2473524198d4" name="Default" comment="">
+    <list default="true" id="023cbf31-5db7-46ff-8362-2473524198d4" name="Default" comment="1&#10;">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/by/scodax/bird/ui/Button.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/by/scodax/bird/ui/RestartButton.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/by/scodax/bird/ui/TextButton.java" />
+      <change type="DELETED" beforePath="E:\_Projects\Numbers\src\by\scodax\bird\ui\SimpleButton.java" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/data/field.png" afterPath="$PROJECT_DIR$/assets/data/field.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/field.psd" afterPath="$PROJECT_DIR$/field.psd" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AndroidManifest.xml" afterPath="$PROJECT_DIR$/AndroidManifest.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/by/scodax/bird/helpers/AssetLoader.java" afterPath="$PROJECT_DIR$/src/by/scodax/bird/helpers/AssetLoader.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/by/scodax/bird/helpers/ColorUtils.java" afterPath="$PROJECT_DIR$/src/by/scodax/bird/helpers/ColorUtils.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/by/scodax/bird/GameRenderer.java" afterPath="$PROJECT_DIR$/src/by/scodax/bird/GameRenderer.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/by/scodax/bird/GameScreen.java" afterPath="$PROJECT_DIR$/src/by/scodax/bird/GameScreen.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/by/scodax/bird/GameWorld.java" afterPath="$PROJECT_DIR$/src/by/scodax/bird/GameWorld.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/by/scodax/bird/helpers/InputHandler.java" afterPath="$PROJECT_DIR$/src/by/scodax/bird/helpers/InputHandler.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/by/scodax/bird/control/NewbieTask.java" afterPath="$PROJECT_DIR$/src/by/scodax/bird/control/NewbieTask.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/by/scodax/bird/model/Numbers.java" afterPath="$PROJECT_DIR$/src/by/scodax/bird/model/Numbers.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/by/scodax/bird/control/Task.java" afterPath="$PROJECT_DIR$/src/by/scodax/bird/control/Task.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Numbers.iws" />
@@ -66,23 +81,7 @@
       </breakpoint>
     </breakpoint_any>
     <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" />
-    <line_breakpoints default_suspend_policy="SuspendAll" default_condition_enabled="true">
-      <breakpoint url="file://$PROJECT_DIR$/src/by/scodax/bird/helpers/AssetLoader.java" line="115" class="by.scodax.bird.helpers.AssetLoader" package="by.scodax.bird.helpers">
-        <option name="ENABLED" value="true" />
-        <option name="LOG_ENABLED" value="false" />
-        <option name="LOG_EXPRESSION_ENABLED" value="false" />
-        <option name="REMOVE_AFTER_HIT" value="false" />
-        <option name="SUSPEND_POLICY" value="SuspendAll" />
-        <option name="SUSPEND" value="true" />
-        <option name="COUNT_FILTER_ENABLED" value="false" />
-        <option name="COUNT_FILTER" value="0" />
-        <option name="CONDITION_ENABLED" value="true" />
-        <option name="CLASS_FILTERS_ENABLED" value="false" />
-        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
-        <option name="CONDITION" value="" />
-        <option name="LOG_MESSAGE" value="" />
-      </breakpoint>
-    </line_breakpoints>
+    <line_breakpoints default_suspend_policy="SuspendAll" default_condition_enabled="true" />
     <breakpoint_rules />
     <ui_properties />
   </component>
@@ -92,28 +91,91 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="AssetLoader.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/by/scodax/bird/helpers/AssetLoader.java">
+      <file leaf-file-name="NumbersGame.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/by/scodax/bird/NumbersGame.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="86" column="60" selection-start="3509" selection-end="3509" vertical-scroll-proportion="0.0" vertical-offset="969" max-vertical-offset="2431">
+            <state line="23" column="20" selection-start="702" selection-end="702" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="493">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Numbers.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/by/scodax/bird/model/Numbers.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="260" column="36" selection-start="9486" selection-end="9486" vertical-scroll-proportion="0.0" vertical-offset="4010" max-vertical-offset="4522">
-              <folding />
-            </state>
+      <file leaf-file-name="field.png" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/assets/data/field.png">
+          <provider selected="true" editor-type-id="images">
+            <state />
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GameRenderer.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="GameRenderer.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/by/scodax/bird/GameRenderer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="114" column="33" selection-start="2970" selection-end="2970" vertical-scroll-proportion="0.3246528" vertical-offset="1479" max-vertical-offset="3196">
+            <state line="128" column="126" selection-start="3738" selection-end="3738" vertical-scroll-proportion="0.0" vertical-offset="1651" max-vertical-offset="3451">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MyActivity.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/example/FlappyBird/MyActivity.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="22" column="1" selection-start="820" selection-end="820" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="425">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Button.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/by/scodax/bird/ui/Button.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="10" column="0" selection-start="169" selection-end="169" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="306">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="RestartButton.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/by/scodax/bird/ui/RestartButton.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="25" column="98" selection-start="820" selection-end="820" vertical-scroll-proportion="0.7378472" vertical-offset="0" max-vertical-offset="850">
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TextButton.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/by/scodax/bird/ui/TextButton.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="25" column="98" selection-start="788" selection-end="788" vertical-scroll-proportion="0.0" vertical-offset="102" max-vertical-offset="731">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ColorUtils.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/by/scodax/bird/helpers/ColorUtils.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="14" column="47" selection-start="427" selection-end="444" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1326">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="GestureDetector.class" pinned="false" current="false" current-in-tab="false">
+        <entry file="jar://$PROJECT_DIR$/libs/gdx.jar!/com/badlogic/gdx/input/GestureDetector.class">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="34" column="11" selection-start="1344" selection-end="1344" vertical-scroll-proportion="-22.44" vertical-offset="0" max-vertical-offset="2397">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="NewbieTask.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/by/scodax/bird/control/NewbieTask.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="13" column="5" selection-start="235" selection-end="235" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="697">
               <folding />
             </state>
           </provider>
@@ -132,13 +194,10 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/AndroidManifest.xml" />
         <option value="$PROJECT_DIR$/src/com/example/FlappyBird/MyActivity.java" />
         <option value="$PROJECT_DIR$/src/by/scodax/bird/BirdGame.java" />
         <option value="$PROJECT_DIR$/src/by/scodax/bird/NumbersGame.java" />
         <option value="$PROJECT_DIR$/src/by/scodax/bird/model/FIshka.java" />
-        <option value="$PROJECT_DIR$/src/by/scodax/bird/GameScreen.java" />
-        <option value="$PROJECT_DIR$/src/by/scodax/bird/GameWorld.java" />
         <option value="$PROJECT_DIR$/src/by/scodax/bird/control/DissapearTask.java" />
         <option value="$PROJECT_DIR$/src/by/scodax/bird/control/ShiftDownTask.java" />
         <option value="$PROJECT_DIR$/src/by/scodax/bird/control/ShiftLeftTask.java" />
@@ -152,20 +211,28 @@
         <option value="$PROJECT_DIR$/src/by/scodax/bird/control/DisappearInTask.java" />
         <option value="$PROJECT_DIR$/src/by/scodax/bird/control/UnionTask.java" />
         <option value="$PROJECT_DIR$/src/by/scodax/bird/control/SetDiplayedValueTask.java" />
-        <option value="$PROJECT_DIR$/src/by/scodax/bird/control/NewbieTask.java" />
         <option value="$PROJECT_DIR$/src/by/scodax/bird/control/ZoomTask.java" />
-        <option value="$PROJECT_DIR$/src/by/scodax/bird/helpers/InputHandler.java" />
         <option value="$PROJECT_DIR$/src/by/scodax/bird/model/Fishka.java" />
         <option value="$PROJECT_DIR$/src/by/scodax/bird/control/WaitTask.java" />
-        <option value="$PROJECT_DIR$/src/by/scodax/bird/helpers/ColorUtils.java" />
         <option value="$PROJECT_DIR$/src/by/scodax/bird/control/ShiftTask.java" />
-        <option value="$PROJECT_DIR$/src/by/scodax/bird/control/Task.java" />
         <option value="$PROJECT_DIR$/src/by/scodax/bird/control/InvokeWhenDoneTask.java" />
         <option value="$PROJECT_DIR$/src/by/scodax/bird/control/CompositeTask.java" />
         <option value="$PROJECT_DIR$/src/by/scodax/bird/control/AddScoreTask.java" />
+        <option value="$PROJECT_DIR$/src/by/scodax/bird/control/Task.java" />
+        <option value="$PROJECT_DIR$/src/by/scodax/bird/control/NewbieTask.java" />
+        <option value="$PROJECT_DIR$/AndroidManifest.xml" />
+        <option value="$PROJECT_DIR$/src/by/scodax/bird/ui/Button.java" />
+        <option value="$PROJECT_DIR$/src/by/scodax/bird/ui/YesButton.java" />
+        <option value="$PROJECT_DIR$/src/by/scodax/bird/ui/NoButton.java" />
         <option value="$PROJECT_DIR$/src/by/scodax/bird/model/Numbers.java" />
+        <option value="$PROJECT_DIR$/src/by/scodax/bird/helpers/ColorUtils.java" />
         <option value="$PROJECT_DIR$/src/by/scodax/bird/helpers/AssetLoader.java" />
+        <option value="$PROJECT_DIR$/src/by/scodax/bird/GameScreen.java" />
+        <option value="$PROJECT_DIR$/src/by/scodax/bird/GameWorld.java" />
+        <option value="$PROJECT_DIR$/src/by/scodax/bird/helpers/InputHandler.java" />
         <option value="$PROJECT_DIR$/src/by/scodax/bird/GameRenderer.java" />
+        <option value="$PROJECT_DIR$/src/by/scodax/bird/ui/TextButton.java" />
+        <option value="$PROJECT_DIR$/src/by/scodax/bird/ui/RestartButton.java" />
       </list>
     </option>
   </component>
@@ -274,6 +341,28 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="ui" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Numbers" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Numbers" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bird" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="model" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -332,6 +421,150 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="libs" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Numbers" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Numbers" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="libs" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="gdx.jar" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiFileNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Numbers" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Numbers" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="libs" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="gdx.jar" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiFileNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="com" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Numbers" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Numbers" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="libs" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="gdx.jar" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiFileNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="com" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="badlogic" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Numbers" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Numbers" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="libs" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="gdx.jar" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiFileNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="com" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="badlogic" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="gdx" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Numbers" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Numbers" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="libs" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="gdx.jar" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiFileNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="com" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="badlogic" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="gdx" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="input" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Numbers" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Numbers" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="assets" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -365,7 +598,7 @@
     <property name="OverrideImplement.overriding.sorted" value="false" />
     <property name="extract.method.default.visibility" value="private" />
     <property name="FullScreen" value="false" />
-    <property name="options.lastSelected" value="project.propVCSSupport.Mappings" />
+    <property name="options.lastSelected" value="preferences.keymap" />
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="options.splitter.details.proportions" value="0.2" />
     <property name="options.searchVisible" value="true" />
@@ -385,6 +618,7 @@
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder2" value="2" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth3" value="892" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder3" value="3" />
+    <property name="ChangesBrowser.SHOW_FLATTEN" value="true" />
   </component>
   <component name="PyConsoleOptionsProvider">
     <option name="myPythonConsoleState">
@@ -393,6 +627,7 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="by.scodax.bird.ui" />
       <recent name="by.scodax.bird.control" />
     </key>
     <key name="CreateClassDialog.RecentsKey">
@@ -649,7 +884,9 @@
       <workItem from="1398543371278" duration="4571000" />
       <workItem from="1398590111074" duration="8222000" />
       <workItem from="1398625509653" duration="9402000" />
-      <workItem from="1399146888821" duration="8003000" />
+      <workItem from="1399146888821" duration="8153000" />
+      <workItem from="1399155720387" duration="365000" />
+      <workItem from="1399229515781" duration="6978000" />
     </task>
     <task id="LOCAL-00001" summary="1">
       <created>1399023801431</created>
@@ -687,41 +924,45 @@
       <created>1399155377109</created>
       <updated>1399155377109</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="1&#10;">
+      <created>1399155554763</created>
+      <updated>1399155554763</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="30198000" />
+    <option name="totallyTimeSpent" value="37691000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
+      <window_info id="Documentation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" x="92" y="92" width="1736" height="856" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32850778" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32850778" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32850778" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32814237" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18656716" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32850778" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32850778" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3997773" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32850778" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32941177" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32850778" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.11727079" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32850778" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Documentation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" x="92" y="92" width="1736" height="856" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="RequestSender" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32941177" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -755,59 +996,12 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/by/scodax/bird/model/Fishka.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="13" selection-start="73" selection-end="73" vertical-scroll-proportion="0.0" vertical-offset="467" max-vertical-offset="1020">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/by/scodax/bird/helpers/InputHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="0" selection-start="602" selection-end="602" vertical-scroll-proportion="0.0" vertical-offset="408" max-vertical-offset="2040">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/by/scodax/bird/helpers/SpriteAccessor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="13" selection-start="169" selection-end="169" vertical-scroll-proportion="0.0" vertical-offset="136" max-vertical-offset="646">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/by/scodax/bird/SplashScreen.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="49" column="39" selection-start="1526" selection-end="1526" vertical-scroll-proportion="0.0" vertical-offset="833" max-vertical-offset="1768">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/by/scodax/bird/GameScreen.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="23" selection-start="758" selection-end="758" vertical-scroll-proportion="0.0" vertical-offset="408" max-vertical-offset="1173">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/by/scodax/bird/GameRenderer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="182" column="44" selection-start="5759" selection-end="5759" vertical-scroll-proportion="0.0" vertical-offset="3094" max-vertical-offset="3723">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/by/scodax/bird/ui/SimpleButton.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="13" selection-start="256" selection-end="256" vertical-scroll-proportion="0.0" vertical-offset="170" max-vertical-offset="1309">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/by/scodax/bird/GameWorld.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="22" column="35" selection-start="470" selection-end="470" vertical-scroll-proportion="0.0" vertical-offset="374" max-vertical-offset="1802">
-          <folding />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -860,17 +1054,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/by/scodax/bird/ui/SimpleButton.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="13" selection-start="256" selection-end="256" vertical-scroll-proportion="0.0" vertical-offset="170" max-vertical-offset="1309">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/by/scodax/bird/GameWorld.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="20" column="11" selection-start="369" selection-end="369" vertical-scroll-proportion="0.0" vertical-offset="340" max-vertical-offset="1802">
-          <folding />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -886,30 +1075,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/AndroidManifest.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="18" selection-start="895" selection-end="895" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="425">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$PROJECT_DIR$/libs/tween-engine-api-sources.jar!/aurelienribon/tweenengine/TweenManager.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="19" column="13" selection-start="614" selection-end="614" vertical-scroll-proportion="0.0" vertical-offset="98" max-vertical-offset="4097" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/example/FlappyBird/MyActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="1" selection-start="820" selection-end="820" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="425">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/by/scodax/bird/ui/SimpleButton.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="13" selection-start="256" selection-end="256" vertical-scroll-proportion="0.0" vertical-offset="612" max-vertical-offset="1258">
-          <folding />
-        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/by/scodax/bird/helpers/SpriteAccessor.java">
@@ -926,44 +1094,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/by/scodax/bird/GameScreen.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="26" selection-start="785" selection-end="785" vertical-scroll-proportion="0.0" vertical-offset="166" max-vertical-offset="1105">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/by/scodax/bird/GameWorld.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="45" column="0" selection-start="995" selection-end="995" vertical-scroll-proportion="0.0" vertical-offset="1067" max-vertical-offset="1819">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/by/scodax/bird/NumbersGame.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="20" selection-start="702" selection-end="702" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="493">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/by/scodax/bird/control/Direction.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="9" column="9" selection-start="123" selection-end="123" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="289">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/by/scodax/bird/control/NewbieTask.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="24" selection-start="451" selection-end="451" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="629">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/by/scodax/bird/helpers/InputHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="88" column="44" selection-start="2537" selection-end="2537" vertical-scroll-proportion="0.0" vertical-offset="714" max-vertical-offset="1887">
           <folding />
         </state>
       </provider>
@@ -1010,28 +1143,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/gen/by/scodax/numbers/BuildConfig.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="1" selection-start="259" selection-end="259" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="221">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/by/scodax/bird/helpers/ColorUtils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="31" column="19" selection-start="1260" selection-end="1260" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1258">
-          <folding />
-        </state>
+        <state line="7" column="1" selection-start="259" selection-end="259" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="221" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/by/scodax/bird/control/WaitTask.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="9" column="34" selection-start="168" selection-end="168" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="561">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/by/scodax/bird/control/Task.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="0" selection-start="316" selection-end="316" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="425">
           <folding />
         </state>
       </provider>
@@ -1076,24 +1193,131 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/by/scodax/bird/control/ZoomTask.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="13" selection-start="147" selection-end="147" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="782">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/by/scodax/bird/control/Task.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12" column="0" selection-start="266" selection-end="266" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="425">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/by/scodax/bird/control/NewbieTask.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="13" column="5" selection-start="235" selection-end="235" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="697">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AndroidManifest.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="50" selection-start="530" selection-end="530" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="425">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/by/scodax/bird/ui/Button.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="10" column="0" selection-start="169" selection-end="169" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="306">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/example/FlappyBird/MyActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="22" column="1" selection-start="820" selection-end="820" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="425">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/by/scodax/bird/model/Numbers.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="260" column="36" selection-start="9486" selection-end="9486" vertical-scroll-proportion="0.0" vertical-offset="3908" max-vertical-offset="4522">
+        <state line="269" column="24" selection-start="9643" selection-end="9643" vertical-scroll-proportion="0.5277778" vertical-offset="4116" max-vertical-offset="4709">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/by/scodax/bird/helpers/ColorUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="14" column="47" selection-start="427" selection-end="444" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1326">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/by/scodax/bird/helpers/AssetLoader.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="86" column="60" selection-start="3509" selection-end="3509" vertical-scroll-proportion="0.0" vertical-offset="969" max-vertical-offset="2431">
+        <state line="111" column="20" selection-start="4571" selection-end="4571" vertical-scroll-proportion="0.4809028" vertical-offset="1491" max-vertical-offset="2482">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/data/field.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/by/scodax/bird/NumbersGame.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="23" column="20" selection-start="702" selection-end="702" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="493">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/libs/gdx.jar!/com/badlogic/gdx/input/GestureDetector.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="34" column="11" selection-start="1344" selection-end="1344" vertical-scroll-proportion="-22.44" vertical-offset="0" max-vertical-offset="2397">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/by/scodax/bird/GameScreen.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="31" column="36" selection-start="1206" selection-end="1206" vertical-scroll-proportion="0.5399306" vertical-offset="131" max-vertical-offset="1122">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/by/scodax/bird/GameWorld.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="72" column="45" selection-start="1527" selection-end="1527" vertical-scroll-proportion="0.0" vertical-offset="767" max-vertical-offset="1411">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/by/scodax/bird/helpers/InputHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="148" column="46" selection-start="4436" selection-end="4436" vertical-scroll-proportion="0.35069445" vertical-offset="2059" max-vertical-offset="3077">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/by/scodax/bird/GameRenderer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="114" column="33" selection-start="2970" selection-end="2970" vertical-scroll-proportion="0.3246528" vertical-offset="1479" max-vertical-offset="3196">
+        <state line="128" column="126" selection-start="3738" selection-end="3738" vertical-scroll-proportion="0.0" vertical-offset="1651" max-vertical-offset="3451">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/by/scodax/bird/ui/TextButton.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="25" column="98" selection-start="788" selection-end="788" vertical-scroll-proportion="0.0" vertical-offset="102" max-vertical-offset="731">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/by/scodax/bird/ui/RestartButton.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="25" column="98" selection-start="820" selection-end="820" vertical-scroll-proportion="0.7378472" vertical-offset="0" max-vertical-offset="850">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

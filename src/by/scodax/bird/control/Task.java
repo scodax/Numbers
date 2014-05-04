@@ -7,8 +7,8 @@ import by.scodax.bird.model.Fishka;
  */
 public interface Task {
 
-    public static final float SHIFT_SPEED = 25;
-    public static final int ALPHA_SPEED = 7;
+    public static final float SHIFT_SPEED = 20;
+    public static final int ALPHA_SPEED = 5;
     public static final float UNION_COEF = 0.7f;
 
     boolean execute(float delta, Fishka fishka);

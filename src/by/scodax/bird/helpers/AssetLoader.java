@@ -18,7 +18,7 @@ public class AssetLoader {
     public static TextureRegion logo, zbLogo, bg, skullUp, skullDown, bar, playButtonUp, playButtonDown,
             ready, gameOver, highScore, scoreboard, star, noStar, retry, field, scoreCurrent, scoreHigh, patrick;
     public static Sound dead, flap, coin, fall;
-    public static BitmapFont blackFont, whiteFont, scoreFont;
+    public static BitmapFont blackFont, whiteFont, scoreFont, scoreFontBig;
     private static Preferences prefs;
 
     public static void load() {
@@ -101,15 +101,18 @@ public class AssetLoader {
         fall = Gdx.audio.newSound(Gdx.files.internal("data/fall.wav"));
 
         blackFont = new BitmapFont(Gdx.files.internal("data/mecha.fnt"));
-        blackFont.setScale(.3f, -.3f);
+        blackFont.setScale(.35f, -.35f);
         blackFont.setColor(Color.valueOf("736d6b"));
 
         scoreFont  = new BitmapFont(Gdx.files.internal("data/mecha.fnt"));
-        scoreFont.setScale(.2f, -.2f);
+        scoreFont.setScale(.3f, -.3f);
         scoreFont.setColor(Color.valueOf("f7f3ef"));
 
+        scoreFontBig  = new BitmapFont(Gdx.files.internal("data/mecha.fnt"));
+        scoreFontBig.setScale(.5f, -.5f);
+
         whiteFont  = new BitmapFont(Gdx.files.internal("data/mecha.fnt"));
-        whiteFont.setScale(.3f, -.3f);
+        whiteFont.setScale(.35f, -.35f);
         whiteFont.setColor(Color.valueOf("f7f3ef"));
 
         // Create (or retrieve existing) preferences file

@@ -10,6 +10,10 @@ import com.badlogic.gdx.graphics.Color;
 public class ColorUtils {
 
     public static final Color COLOR_BACKGROUND = Color.valueOf("f7f7ef");
+    public static final Color COLOR_RESTART_ACTIVE = Color.valueOf("ff7d00");
+    public static final Color COLOR_RESTART_INACTIVE = Color.valueOf("b5aea5");
+    public static final Color COLOR_TEXT_BUTTON = Color.valueOf("7b6d63");
+    public static final Color COLOR_SCORE = Color.valueOf("f7f3ef");
     public static final Color COLOR_2 = Color.valueOf("efe3d6");
     public static final Color COLOR_4 = Color.valueOf("efdfc6");
     public static final Color COLOR_8 = Color.valueOf("f7ae7b");

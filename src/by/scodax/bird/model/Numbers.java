@@ -266,4 +266,15 @@ public class Numbers {
     public int getScore() {
         return score;
     }
+
+    public void reset() {
+        score = 0;
+        for (int i = 0; i < fishki.length; i++) {
+            Fishka[] column = fishki[i];
+            for (int j = 0; j < column.length; j++) {
+                column[j] = new Fishka();
+            }
+        }
+        init();
+    }
 }

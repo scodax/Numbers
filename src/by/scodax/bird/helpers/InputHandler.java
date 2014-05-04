@@ -3,7 +3,12 @@ package by.scodax.bird.helpers;
 import by.scodax.bird.GameWorld;
 import by.scodax.bird.control.Direction;
 import by.scodax.bird.model.Numbers;
-import by.scodax.bird.ui.SimpleButton;
+import by.scodax.bird.ui.Button;
+import by.scodax.bird.ui.RestartButton;
+import by.scodax.bird.ui.TextButton;
+import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.Input;
+import com.badlogic.gdx.InputProcessor;
 import com.badlogic.gdx.input.GestureDetector;
 import com.badlogic.gdx.math.Vector2;
 
@@ -13,12 +18,14 @@ import java.util.List;
 /**
  * Created by patrick on 24.04.14.
  */
-public class InputHandler implements GestureDetector.GestureListener {
+public class InputHandler implements GestureDetector.GestureListener, InputProcessor {
     private GameWorld myWorld;
 
-    private List<SimpleButton> menuButtons;
+    private List<Button> menuButtons;
 
-    private SimpleButton playButton;
+    private RestartButton restartButton;
+    private TextButton yesButton;
+    private TextButton noButton;
 
     private float scaleFactorX;
     private float scaleFactorY;
@@ -32,12 +39,14 @@ public class InputHandler implements GestureDetector.GestureListener {
         this.scaleFactorY = scaleFactorY;
         this.numbers = numbers;
 
-        menuButtons = new ArrayList<SimpleButton>();
-        playButton = new SimpleButton(
-                136 / 2 - (AssetLoader.playButtonUp.getRegionWidth() / 2),
-                500, 29, 16, AssetLoader.playButtonUp,
-                AssetLoader.playButtonDown);
-        menuButtons.add(playButton);
+        menuButtons = new ArrayList<Button>();
+        restartButton = new RestartButton(40, 260, myWorld);
+        yesButton = new TextButton(130, 550, myWorld, "YES");
+        noButton = new TextButton(300, 550, myWorld, "NO");
+
+        menuButtons.add(restartButton);
+        menuButtons.add(yesButton);
+        menuButtons.add(noButton);
     }
 
 
@@ -49,10 +58,6 @@ public class InputHandler implements GestureDetector.GestureListener {
         return (int) (screenY / scaleFactorY);
     }
 
-    public List<SimpleButton> getMenuButtons() {
-        return menuButtons;
-    }
-
     @Override
     public boolean touchDown(float v, float v2, int i, int i2) {
         return false;
@@ -60,6 +65,20 @@ public class InputHandler implements GestureDetector.GestureListener {
 
     @Override
     public boolean tap(float v, float v2, int i, int i2) {
+        float x = v / scaleFactorX;
+        float y = v2 / scaleFactorY;
+        System.out.println("TAP!!!!!");
+        if (restartButton.isClicked(x, y) && !myWorld.isRestart()) {
+            myWorld.setState(GameWorld.GameState.IS_RESTART);
+        } else if (myWorld.isRestart() && yesButton.isClicked(x, y)) {
+            myWorld.restart();
+        } else if (myWorld.isRestart() && noButton.isClicked(x, y)) {
+            myWorld.setState(GameWorld.GameState.RUNNING);
+        } else if (myWorld.isExit() && yesButton.isClicked(x, y)) {
+            Gdx.app.exit();
+        } else if (myWorld.isExit() && noButton.isClicked(x, y)) {
+            myWorld.setState(GameWorld.GameState.RUNNING);
+        }
         return false;
     }
 
@@ -70,6 +89,9 @@ public class InputHandler implements GestureDetector.GestureListener {
 
     @Override
     public boolean fling(float velocityX, float velocityY, int button) {
+        if (!myWorld.isRunning()) {
+            return true;
+        }
         if (Math.abs(velocityX) > Math.abs(velocityY)) {
             if (velocityX > 0) {
                 System.out.println("right");
@@ -111,6 +133,59 @@ public class InputHandler implements GestureDetector.GestureListener {
 
     @Override
     public boolean pinch(Vector2 vector2, Vector2 vector22, Vector2 vector23, Vector2 vector24) {
+        return false;
+    }
+
+    public List<Button> getMenuButtons() {
+        return menuButtons;
+    }
+
+    @Override
+    public boolean keyDown(int keycode) {
+        if(keycode == Input.Keys.BACK){
+            if (myWorld.isRestart()) {
+                myWorld.setState(GameWorld.GameState.RUNNING);
+            } else if (myWorld.isRunning()) {
+                myWorld.setState(GameWorld.GameState.EXIT);
+            } else if (myWorld.isExit()) {
+                myWorld.setState(GameWorld.GameState.RUNNING);
+            }
+        }
+        return false;
+    }
+
+    @Override
+    public boolean keyUp(int i) {
+        return false;
+    }
+
+    @Override
+    public boolean keyTyped(char c) {
+        return false;
+    }
+
+    @Override
+    public boolean touchDown(int i, int i2, int i3, int i4) {
+        return false;
+    }
+
+    @Override
+    public boolean touchUp(int i, int i2, int i3, int i4) {
+        return false;
+    }
+
+    @Override
+    public boolean touchDragged(int i, int i2, int i3) {
+        return false;
+    }
+
+    @Override
+    public boolean mouseMoved(int i, int i2) {
+        return false;
+    }
+
+    @Override
+    public boolean scrolled(int i) {
         return false;
     }
 }

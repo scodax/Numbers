@@ -6,7 +6,7 @@ import aurelienribon.tweenengine.TweenManager;
 import by.scodax.bird.helpers.*;
 import by.scodax.bird.model.Fishka;
 import by.scodax.bird.model.Numbers;
-import by.scodax.bird.ui.SimpleButton;
+import by.scodax.bird.ui.Button;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.GL20;
@@ -35,8 +35,6 @@ public class GameRenderer {
 
     private SpriteBatch batcher;
 
-    private int midPointY;
-
     // Game Assets
     private TextureRegion field;
 
@@ -45,19 +43,16 @@ public class GameRenderer {
     private Value alpha = new Value();
 
     // Buttons
-    private List<SimpleButton> menuButtons;
+    private List<Button> menuButtons;
     private Color transitionColor;
-    private TextureRegion star;
 
     private Numbers numbers;
 
-    public GameRenderer(GameWorld world, int gameHeight, int midPointY, Numbers numbers) {
+    public GameRenderer(GameWorld world, int gameHeight, Numbers numbers, InputHandler inputHandler) {
         myWorld = world;
 
-        this.midPointY = midPointY;
         this.numbers = numbers;
-//        this.menuButtons = ((InputHandler) Gdx.input.getInputProcessor())
-//                .getMenuButtons();
+        this.menuButtons = inputHandler.getMenuButtons();
 
         cam = new OrthographicCamera();
         cam.setToOrtho(true, 480, gameHeight);
@@ -81,18 +76,7 @@ public class GameRenderer {
 
     private void initAssets() {
         field = AssetLoader.field;
-        star = AssetLoader.star;
-//        noStar = AssetLoader.noStar;
-    }
-
-
-
-    private void drawMenuUI() {
-
-        for (SimpleButton button : menuButtons) {
-            button.draw(batcher);
-        }
-
+        //        noStar = AssetLoader.noStar;
     }
 
     public void render(float delta, float runTime) {
@@ -109,20 +93,11 @@ public class GameRenderer {
         shapeRenderer.end();
 
         batcher.begin();
-        batcher.disableBlending();
+        batcher.enableBlending();
 
         batcher.draw(field, 40, 300, 400, 400);
-        batcher.enableBlending();
-        batcher.draw(AssetLoader.scoreCurrent, 192, 70, 120, 60);
-        batcher.draw(AssetLoader.scoreHigh, 320, 70, 120, 60);
-        String scoreS = "" + numbers.getScore();
-        BitmapFont.TextBounds scoreSBounds = AssetLoader.scoreFont.getBounds(scoreS);
-        AssetLoader.scoreFont.draw(batcher, scoreS, 192 + 60 - scoreSBounds.width / 2, 100);
-        String highScoreS = "" + AssetLoader.getHighScore();
-        BitmapFont.TextBounds highScoreSBounds = AssetLoader.scoreFont.getBounds(highScoreS);
-        AssetLoader.scoreFont.draw(batcher, highScoreS, 320 + 60 - highScoreSBounds.width / 2, 100);
 
-        batcher.draw(AssetLoader.patrick, 40, 35, 140, 105);
+        drawScore();
         batcher.end();
 
 
@@ -135,6 +110,46 @@ public class GameRenderer {
                 renderFishka(i, j, fishka);
             }
         }
+
+        if (myWorld.isRestart() || myWorld.isExit()) {
+
+            Gdx.gl.glEnable(GL20.GL_BLEND);
+            shapeRenderer.begin(ShapeRenderer.ShapeType.Filled);
+
+//        Draw Background color
+            Color color = new Color(ColorUtils.COLOR_BACKGROUND);
+            shapeRenderer.setColor(new Color(color.r, color.g, color.b, .7f));
+            shapeRenderer.rect(40, 300, 400, 400);
+
+            shapeRenderer.end();
+
+            batcher.begin();
+            batcher.enableBlending();
+            AssetLoader.scoreFontBig.setColor(ColorUtils.COLOR_TEXT_BUTTON);
+            AssetLoader.scoreFontBig.draw(batcher, myWorld.isRestart() ? "Restart?" : "Exit?", myWorld.isRestart() ? 135 : 175, 430);
+            batcher.end();
+        }
+
+
+        batcher.begin();
+        batcher.enableBlending();
+        for (Button menuButton : menuButtons) {
+            menuButton.draw(batcher);
+        }
+        batcher.end();
+    }
+
+    private void drawScore() {
+        batcher.draw(AssetLoader.scoreCurrent, 192, 70, 120, 60);
+        batcher.draw(AssetLoader.scoreHigh, 320, 70, 120, 60);
+        String scoreS = "" + numbers.getScore();
+        AssetLoader.scoreFont.setColor(ColorUtils.COLOR_SCORE);
+        BitmapFont.TextBounds scoreSBounds = AssetLoader.scoreFont.getBounds(scoreS);
+        AssetLoader.scoreFont.draw(batcher, scoreS, 192 + 60 - scoreSBounds.width / 2, 102);
+        String highScoreS = "" + AssetLoader.getHighScore();
+        BitmapFont.TextBounds highScoreSBounds = AssetLoader.scoreFont.getBounds(highScoreS);
+        AssetLoader.scoreFont.draw(batcher, highScoreS, 320 + 60 - highScoreSBounds.width / 2, 102);
+        batcher.draw(AssetLoader.patrick, 40, 35, 140, 105);
     }
 
     private void renderFishka(int i, int j, Fishka fishka) {

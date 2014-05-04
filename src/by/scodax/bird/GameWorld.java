@@ -1,6 +1,7 @@
 package by.scodax.bird;
 
 import by.scodax.bird.model.Numbers;
+import by.scodax.bird.ui.RestartButton;
 
 /**
  * User: Administrator
@@ -9,27 +10,35 @@ import by.scodax.bird.model.Numbers;
  */
 public class GameWorld {
 
-    private int score = 0;
-    private float runTime = 0;
-    private int midPointY;
     private GameRenderer renderer;
 
     private GameState currentState;
     private Numbers numbers;
 
-    public enum GameState {
-        MENU, READY, RUNNING, GAMEOVER, HIGHSCORE
+    public void setState(GameState gameState) {
+        currentState = gameState;
     }
 
-    public GameWorld(int midPointY, Numbers numbers) {
+    public boolean isRunning() {
+        return currentState == GameState.RUNNING;
+    }
+
+    public void restart() {
+        numbers.reset();
+        currentState = GameState.RUNNING;
+    }
+
+    public enum GameState {
+        RUNNING, IS_RESTART, EXIT
+    }
+
+    public GameWorld(Numbers numbers) {
         this.numbers = numbers;
-        currentState = GameState.MENU;
-        this.midPointY = midPointY;
+        currentState = GameState.RUNNING;
     }
 
     public void update(float delta) {
-        runTime += delta;
-//
+        //
 //        switch (currentState) {
 //            case READY:
 //            case MENU:
@@ -56,51 +65,18 @@ public class GameWorld {
         numbers.update(delta);
     }
 
-
-    public int getScore() {
-        return score;
+    public boolean isRestart() {
+        return currentState == GameState.IS_RESTART;
     }
 
-    public void addScore(int increment) {
-        score += increment;
-    }
-
-    public void start() {
-        currentState = GameState.RUNNING;
-    }
-
-    public void ready() {
-        currentState = GameState.READY;
-        renderer.prepareTransition(0, 0, 0, 1f);
-    }
-
-    public void restart() {
-        score = 0;
-        ready();
-    }
-
-    public boolean isReady() {
-        return currentState == GameState.READY;
-    }
-
-    public boolean isGameOver() {
-        return currentState == GameState.GAMEOVER;
-    }
-
-    public boolean isHighScore() {
-        return currentState == GameState.HIGHSCORE;
-    }
-
-    public boolean isMenu() {
-        return currentState == GameState.MENU;
-    }
-
-    public boolean isRunning() {
-        return currentState == GameState.RUNNING;
+    public boolean isExit() {
+        return currentState == GameState.EXIT;
     }
 
     public void setRenderer(GameRenderer renderer) {
         this.renderer = renderer;
     }
+
+
 
 }
