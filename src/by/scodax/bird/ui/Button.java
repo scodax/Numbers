@@ -7,6 +7,8 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
  */
 public interface Button {
 
+    boolean isClicked(float x, float y);
+
     void draw(SpriteBatch batch);
 
 }

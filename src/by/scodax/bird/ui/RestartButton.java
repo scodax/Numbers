@@ -17,6 +17,7 @@ public class RestartButton implements Button {
     private final float y;
     private final GameWorld gameWorld;
     private final Rectangle bounds;
+    private boolean pressed = false;
 
     public RestartButton(float x, float y, GameWorld gameWorld) {
         this.x = x;
@@ -26,19 +27,25 @@ public class RestartButton implements Button {
         bounds = new Rectangle(x - 20, y - 20, AssetLoader.scoreFont.getBounds(RESTART).width + 40, 70);
     }
 
+    @Override
     public boolean isClicked(float x, float y) {
         return bounds.contains(x, y);
     }
 
     public void draw(SpriteBatch batch) {
         Color color = AssetLoader.scoreFont.getColor();
-        if (gameWorld.isRestart()) {
+        if (!gameWorld.isRunning()) {
             AssetLoader.scoreFont.setColor(ColorUtils.COLOR_RESTART_INACTIVE);
         } else {
             AssetLoader.scoreFont.setColor(ColorUtils.COLOR_RESTART_ACTIVE);
         }
+        if (pressed)
+            AssetLoader.scoreFont.getColor().a = .8f;
         AssetLoader.scoreFont.draw(batch, RESTART, x, y);
         AssetLoader.scoreFont.setColor(color);
     }
 
+    public void setPressed(boolean pressed) {
+        this.pressed = pressed;
+    }
 }

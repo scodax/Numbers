@@ -14,12 +14,12 @@ import com.badlogic.gdx.graphics.g2d.TextureRegion;
  */
 public class AssetLoader {
 
-    public static Texture texture, logoTexture, fieldTexture, scoreCurrentTexture, scoreHighTexture, patrickTexture;
+    public static Texture texture, logoTexture, fieldTexture, scoreCurrentTexture, scoreHighTexture, patrickTexture, menuTexture;
     public static TextureRegion logo, zbLogo, bg, skullUp, skullDown, bar, playButtonUp, playButtonDown,
-            ready, gameOver, highScore, scoreboard, star, noStar, retry, field, scoreCurrent, scoreHigh, patrick;
+            ready, gameOver, highScore, scoreboard, star, noStar, retry, field, scoreCurrent, scoreHigh, patrick, menu, menuPressed;
     public static Sound dead, flap, coin, fall;
     public static BitmapFont blackFont, whiteFont, scoreFont, scoreFontBig;
-    private static Preferences prefs;
+    public static Preferences prefs;
 
     public static void load() {
 
@@ -42,6 +42,9 @@ public class AssetLoader {
 
         patrickTexture = new Texture(Gdx.files.internal("data/patrick.png"));
         patrickTexture.setFilter(Texture.TextureFilter.Nearest, Texture.TextureFilter.Nearest);
+
+        menuTexture = new Texture(Gdx.files.internal("data/menu_button.png"));
+        menuTexture.setFilter(Texture.TextureFilter.Nearest, Texture.TextureFilter.Nearest);
 
         playButtonUp = new TextureRegion(texture, 0, 83, 29, 16);
         playButtonDown = new TextureRegion(texture, 29, 83, 29, 16);
@@ -94,6 +97,12 @@ public class AssetLoader {
 
         bar = new TextureRegion(texture, 136, 16, 22, 3);
         bar.flip(false, true);
+
+        menu = new TextureRegion(menuTexture, 0, 0, 40, 32);
+        menu.flip(false, true);
+
+        menuPressed = new TextureRegion(menuTexture, 40, 0, 40, 32);
+        menuPressed.flip(false, true);
 
         dead = Gdx.audio.newSound(Gdx.files.internal("data/dead.wav"));
         flap = Gdx.audio.newSound(Gdx.files.internal("data/flap.wav"));

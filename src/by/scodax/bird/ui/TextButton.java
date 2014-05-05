@@ -16,6 +16,7 @@ public class TextButton implements Button {
     private final GameWorld gameWorld;
     private final Rectangle bounds;
     private final String text;
+    private boolean pressed = false;
 
     public TextButton(float x, float y, GameWorld gameWorld, String text) {
         this.x = x;
@@ -35,8 +36,13 @@ public class TextButton implements Button {
             return;
         Color color = AssetLoader.scoreFont.getColor();
         AssetLoader.scoreFont.setColor(ColorUtils.COLOR_TEXT_BUTTON);
+        if (pressed)
+            AssetLoader.scoreFont.getColor().a = .8f;
         AssetLoader.scoreFont.draw(batch, text, x, y);
         AssetLoader.scoreFont.setColor(color);
     }
 
+    public void setPressed(boolean pressed) {
+        this.pressed = pressed;
+    }
 }
