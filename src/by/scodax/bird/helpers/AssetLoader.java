@@ -14,9 +14,10 @@ import com.badlogic.gdx.graphics.g2d.TextureRegion;
  */
 public class AssetLoader {
 
-    public static Texture texture, logoTexture, fieldTexture, scoreCurrentTexture, scoreHighTexture, patrickTexture, menuTexture;
+    public static Texture texture, logoTexture, fieldTexture, scoreCurrentTexture, scoreHighTexture, patrickTexture, menuTexture, yesNoButtonsTexture;
     public static TextureRegion logo, zbLogo, bg, skullUp, skullDown, bar, playButtonUp, playButtonDown,
-            ready, gameOver, highScore, scoreboard, star, noStar, retry, field, scoreCurrent, scoreHigh, patrick, menu, menuPressed;
+            ready, gameOver, highScore, scoreboard, star, noStar, retry, field, scoreCurrent, scoreHigh, patrick, menu, menuPressed,
+            yes, yesPressed, no, noPressed;
     public static Sound dead, flap, coin, fall;
     public static BitmapFont blackFont, whiteFont, scoreFont, scoreFontBig;
     public static Preferences prefs;
@@ -45,6 +46,9 @@ public class AssetLoader {
 
         menuTexture = new Texture(Gdx.files.internal("data/menu_button.png"));
         menuTexture.setFilter(Texture.TextureFilter.Nearest, Texture.TextureFilter.Nearest);
+
+        yesNoButtonsTexture = new Texture(Gdx.files.internal("data/yes_no_buttons.png"));
+        yesNoButtonsTexture.setFilter(Texture.TextureFilter.Nearest, Texture.TextureFilter.Nearest);
 
         playButtonUp = new TextureRegion(texture, 0, 83, 29, 16);
         playButtonDown = new TextureRegion(texture, 29, 83, 29, 16);
@@ -103,6 +107,18 @@ public class AssetLoader {
 
         menuPressed = new TextureRegion(menuTexture, 40, 0, 40, 32);
         menuPressed.flip(false, true);
+
+        yes = new TextureRegion(yesNoButtonsTexture, 0, 0, 100, 60);
+        yes.flip(false, true);
+
+        yesPressed = new TextureRegion(yesNoButtonsTexture, 0, 60, 100, 60);
+        yesPressed.flip(false, true);
+
+        no = new TextureRegion(yesNoButtonsTexture, 100, 0, 100, 60);
+        no.flip(false, true);
+
+        noPressed = new TextureRegion(yesNoButtonsTexture, 100, 60, 100, 60);
+        noPressed.flip(false, true);
 
         dead = Gdx.audio.newSound(Gdx.files.internal("data/dead.wav"));
         flap = Gdx.audio.newSound(Gdx.files.internal("data/flap.wav"));

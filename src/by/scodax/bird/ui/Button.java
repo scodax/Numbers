@@ -11,4 +11,10 @@ public interface Button {
 
     void draw(SpriteBatch batch);
 
+    void click();
+
+    void setOnClickListener(OnClickListener listener);
+
+    void setPressed(boolean pressed);
+
 }

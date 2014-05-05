@@ -3,10 +3,7 @@ package by.scodax.bird.helpers;
 import by.scodax.bird.GameWorld;
 import by.scodax.bird.control.Direction;
 import by.scodax.bird.model.Numbers;
-import by.scodax.bird.ui.Button;
-import by.scodax.bird.ui.MenuButton;
-import by.scodax.bird.ui.RestartButton;
-import by.scodax.bird.ui.TextButton;
+import by.scodax.bird.ui.*;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input;
 import com.badlogic.gdx.InputProcessor;
@@ -24,10 +21,10 @@ public class InputHandler implements GestureDetector.GestureListener, InputProce
 
     private List<Button> menuButtons;
 
-    private RestartButton restartButton;
-    private TextButton yesButton;
-    private TextButton noButton;
-    private MenuButton menuButton;
+    private Button restartButton;
+    private Button yesButton;
+    private Button noButton;
+    private Button menuButton;
 
     private float scaleFactorX;
     private float scaleFactorY;
@@ -43,8 +40,8 @@ public class InputHandler implements GestureDetector.GestureListener, InputProce
 
         menuButtons = new ArrayList<Button>();
         restartButton = new RestartButton(40, 260, myWorld);
-        yesButton = new TextButton(130, 550, myWorld, "YES");
-        noButton = new TextButton(300, 550, myWorld, "NO");
+        yesButton = new YesButton(100, 550, myWorld);
+        noButton = new NoButton(300, 550, myWorld);
         menuButton = new MenuButton(400, 20, myWorld);
 
         menuButtons.add(restartButton);
@@ -68,9 +65,9 @@ public class InputHandler implements GestureDetector.GestureListener, InputProce
         float y = v2 / scaleFactorY;
         if (myWorld.isRunning() && menuButton.isClicked(x, y)) {
             menuButton.setPressed(true);
-        } else if (yesButton.isClicked(x, y)) {
+        } else if ((myWorld.isRestart() || myWorld.isExit()) && yesButton.isClicked(x, y)) {
             yesButton.setPressed(true);
-        } else if (noButton.isClicked(x, y)) {
+        } else if ((myWorld.isRestart() || myWorld.isExit()) && noButton.isClicked(x, y)) {
             noButton.setPressed(true);
         } else if (myWorld.isRunning() && restartButton.isClicked(x, y)) {
             restartButton.setPressed(true);
@@ -93,17 +90,20 @@ public class InputHandler implements GestureDetector.GestureListener, InputProce
         } else if (myWorld.isExit() && noButton.isClicked(x, y)) {
             myWorld.setState(GameWorld.GameState.RUNNING);
         }
+        resetPressed();
         return false;
     }
 
     @Override
     public boolean longPress(float v, float v2) {
+        resetPressed();
         return false;
     }
 
     @Override
     public boolean fling(float velocityX, float velocityY, int button) {
         if (!myWorld.isRunning()) {
+            resetPressed();
             return true;
         }
         if (Math.abs(velocityX) > Math.abs(velocityY)) {
@@ -186,11 +186,15 @@ public class InputHandler implements GestureDetector.GestureListener, InputProce
 
     @Override
     public boolean touchUp(int i, int i2, int i3, int i4) {
+        resetPressed();
+        return false;
+    }
+
+    private void resetPressed() {
         menuButton.setPressed(false);
         yesButton.setPressed(false);
         noButton.setPressed(false);
         restartButton.setPressed(false);
-        return false;
     }
 
     @Override

@@ -16,7 +16,7 @@ public class MyActivity extends AndroidApplication {
         AndroidApplicationConfiguration config = new
                 AndroidApplicationConfiguration();
         config.useGLSurfaceView20API18 = true;
-        config.resolutionStrategy = new RatioResolutionStrategy(480, 800);
+//        config.resolutionStrategy = new RatioResolutionStrategy(480, 800);
 
         initialize(new NumbersGame(), config);
     }

@@ -11,25 +11,13 @@ import com.badlogic.gdx.math.Rectangle;
 /**
  * patrick 04.05.14.
  */
-public class RestartButton implements Button {
+public class RestartButton extends AbstractButton {
     public static final String RESTART = "RESTART";
-    private final float x;
-    private final float y;
     private final GameWorld gameWorld;
-    private final Rectangle bounds;
-    private boolean pressed = false;
 
     public RestartButton(float x, float y, GameWorld gameWorld) {
-        this.x = x;
-        this.y = y;
+        super(x, y, new Rectangle(x - 20, y - 20, AssetLoader.scoreFont.getBounds(RESTART).width + 40, 70));
         this.gameWorld = gameWorld;
-
-        bounds = new Rectangle(x - 20, y - 20, AssetLoader.scoreFont.getBounds(RESTART).width + 40, 70);
-    }
-
-    @Override
-    public boolean isClicked(float x, float y) {
-        return bounds.contains(x, y);
     }
 
     public void draw(SpriteBatch batch) {
@@ -39,13 +27,10 @@ public class RestartButton implements Button {
         } else {
             AssetLoader.scoreFont.setColor(ColorUtils.COLOR_RESTART_ACTIVE);
         }
-        if (pressed)
+        if (isPressed())
             AssetLoader.scoreFont.getColor().a = .8f;
         AssetLoader.scoreFont.draw(batch, RESTART, x, y);
         AssetLoader.scoreFont.setColor(color);
     }
 
-    public void setPressed(boolean pressed) {
-        this.pressed = pressed;
-    }
 }

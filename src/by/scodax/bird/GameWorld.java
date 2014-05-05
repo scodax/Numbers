@@ -34,24 +34,24 @@ public class GameWorld {
 
     public GameWorld(Numbers numbers) {
         this.numbers = numbers;
-        currentState = GameState.RUNNING;
+        this.currentState = GameState.RUNNING;
     }
 
     public void update(float delta) {
-        //
-//        switch (currentState) {
-//            case READY:
-//            case MENU:
+
+        switch (currentState) {
+            case IS_RESTART:
+            case EXIT:
 //                updateReady(delta);
-//                break;
-//
-//            case RUNNING:
-//                updateRunning(delta);
-//                break;
-//            default:
-//                break;
-//        }
-        updateRunning(delta);
+                break;
+
+            case RUNNING:
+                updateRunning(delta);
+                break;
+            default:
+                break;
+        }
+//        updateRunning(delta);
 
     }
 
