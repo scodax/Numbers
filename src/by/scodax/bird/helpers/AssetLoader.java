@@ -14,9 +14,9 @@ import com.badlogic.gdx.graphics.g2d.TextureRegion;
  */
 public class AssetLoader {
 
-    public static Texture texture, logoTexture, fieldTexture, scoreCurrentTexture, scoreHighTexture, patrickTexture, menuTexture, yesNoButtonsTexture;
+    public static Texture texture, logoTexture, fieldTexture, scoreCurrentTexture, scoreHighTexture, patrickTexture, menuTexture, yesNoButtonsTexture, gameover;
     public static TextureRegion logo, zbLogo, bg, skullUp, skullDown, bar, playButtonUp, playButtonDown,
-            ready, gameOver, highScore, scoreboard, star, noStar, retry, field, scoreCurrent, scoreHigh, patrick, menu, menuPressed,
+            ready, highScore, scoreboard, star, noStar, retry, field, scoreCurrent, scoreHigh, patrick, menu, menuPressed,
             yes, yesPressed, no, noPressed;
     public static Sound dead, flap, coin, fall;
     public static BitmapFont blackFont, whiteFont, scoreFont, scoreFontBig;
@@ -50,6 +50,9 @@ public class AssetLoader {
         yesNoButtonsTexture = new Texture(Gdx.files.internal("data/yes_no_buttons.png"));
         yesNoButtonsTexture.setFilter(Texture.TextureFilter.Nearest, Texture.TextureFilter.Nearest);
 
+        gameover = new Texture(Gdx.files.internal("data/gameover.png"));
+        gameover.setFilter(Texture.TextureFilter.Nearest, Texture.TextureFilter.Nearest);
+
         playButtonUp = new TextureRegion(texture, 0, 83, 29, 16);
         playButtonDown = new TextureRegion(texture, 29, 83, 29, 16);
         playButtonUp.flip(false, true);
@@ -60,9 +63,6 @@ public class AssetLoader {
 
         retry = new TextureRegion(texture, 59, 110, 33, 7);
         retry.flip(false, true);
-
-        gameOver = new TextureRegion(texture, 59, 92, 46, 7);
-        gameOver.flip(false, true);
 
         scoreboard = new TextureRegion(texture, 111, 83, 97, 37);
         scoreboard.flip(false, true);

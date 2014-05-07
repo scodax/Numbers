@@ -111,7 +111,7 @@ public class GameRenderer {
             }
         }
 
-        if (myWorld.isRestart() || myWorld.isExit()) {
+        if (myWorld.isRestart() || myWorld.isExit() || myWorld.isGameOver()) {
 
             Gdx.gl.glEnable(GL20.GL_BLEND);
             shapeRenderer.begin(ShapeRenderer.ShapeType.Filled);
@@ -125,8 +125,12 @@ public class GameRenderer {
 
             batcher.begin();
             batcher.enableBlending();
-            AssetLoader.scoreFontBig.setColor(ColorUtils.COLOR_TEXT_BUTTON);
-            AssetLoader.scoreFontBig.draw(batcher, myWorld.isRestart() ? "Restart?" : "Exit?", myWorld.isRestart() ? 135 : 175, 430);
+            if (myWorld.isGameOver()) {
+                batcher.draw(AssetLoader.gameover, 0, 300, 400, 300);
+            } else {
+                AssetLoader.scoreFontBig.setColor(ColorUtils.COLOR_TEXT_BUTTON);
+                AssetLoader.scoreFontBig.draw(batcher, myWorld.isRestart() ? "Restart?" : "Exit?", myWorld.isRestart() ? 135 : 175, 430);
+            }
             batcher.end();
         }
 

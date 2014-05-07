@@ -106,26 +106,26 @@ public class InputHandler implements GestureDetector.GestureListener, InputProce
             resetPressed();
             return true;
         }
+        Boolean gameOver = null;
         if (Math.abs(velocityX) > Math.abs(velocityY)) {
             if (velocityX > 0) {
-                System.out.println("right");
-                numbers.swipe(Direction.Right);
+                gameOver = numbers.swipe(Direction.Right);
             } else if (velocityX < 0) {
-                System.out.println("left");
-                numbers.swipe(Direction.Left);
+                gameOver = numbers.swipe(Direction.Left);
             } else {
                 // Do nothing.
             }
         } else {
             if (velocityY > 0) {
-                System.out.println("down");
-                numbers.swipe(Direction.Down);
+                gameOver = numbers.swipe(Direction.Down);
             } else if (velocityY < 0) {
-                System.out.println("up");
-                numbers.swipe(Direction.Up);
+                gameOver = numbers.swipe(Direction.Up);
             } else {
                 // Do nothing.
             }
+        }
+        if (gameOver != null && gameOver.equals(Boolean.FALSE)) {
+            myWorld.setState(GameWorld.GameState.GAMEOVER);
         }
         return true;
     }
@@ -162,6 +162,8 @@ public class InputHandler implements GestureDetector.GestureListener, InputProce
             } else if (myWorld.isRunning()) {
                 myWorld.setState(GameWorld.GameState.EXIT);
             } else if (myWorld.isExit()) {
+                myWorld.setState(GameWorld.GameState.RUNNING);
+            } else if (myWorld.isGameOver()) {
                 myWorld.setState(GameWorld.GameState.RUNNING);
             }
         }

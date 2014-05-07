@@ -62,37 +62,51 @@ public class Numbers {
         }
     }
 
-    public void swipe(Direction direction) {
+    public boolean swipe(Direction direction) {
         float swipeTime = 0;
         for (int i = 0; i < fishki.length; i++) {
             switch (direction) {
                 case Left:
-                    swipeTime = Math.max(swipeTime, shiftRowLeft(i));
-                    swipeTime = Math.max(swipeTime, sumRowLeft(i));
-                    swipeTime = Math.max(swipeTime, shiftRowLeft(i));
+                    swipeTime = Math.max(swipeTime, shiftRowLeft(i, false));
+                    swipeTime = Math.max(swipeTime, sumRowLeft(i, false));
+                    swipeTime = Math.max(swipeTime, shiftRowLeft(i, false));
                     break;
                 case Right:
-                    swipeTime = Math.max(swipeTime, shiftRowRight(i));
-                    swipeTime = Math.max(swipeTime, sumRowRight(i));
-                    swipeTime = Math.max(swipeTime, shiftRowRight(i));
+                    swipeTime = Math.max(swipeTime, shiftRowRight(i, false));
+                    swipeTime = Math.max(swipeTime, sumRowRight(i, false));
+                    swipeTime = Math.max(swipeTime, shiftRowRight(i, false));
                     break;
                 case Up:
-                    swipeTime = Math.max(swipeTime, shiftColumnUp(i));
-                    swipeTime = Math.max(swipeTime, sumColumnUp(i));
-                    swipeTime = Math.max(swipeTime, shiftColumnUp(i));
+                    swipeTime = Math.max(swipeTime, shiftColumnUp(i, false));
+                    swipeTime = Math.max(swipeTime, sumColumnUp(i, false));
+                    swipeTime = Math.max(swipeTime, shiftColumnUp(i, false));
                     break;
                 case Down:
-                    swipeTime = Math.max(swipeTime, shiftColumnDown(i));
-                    swipeTime = Math.max(swipeTime, sumColumnDown(i));
-                    swipeTime = Math.max(swipeTime, shiftColumnDown(i));
+                    swipeTime = Math.max(swipeTime, shiftColumnDown(i, false));
+                    swipeTime = Math.max(swipeTime, sumColumnDown(i, false));
+                    swipeTime = Math.max(swipeTime, shiftColumnDown(i, false));
                     break;
             }
         }
-        if (swipeTime > 0)
+        if (swipeTime > 0) {
             generateFishka(swipeTime);
+            return true;
+        } else {
+            for (int i = 0; i < fishki.length; i++) {
+                if (shiftRowLeft(i, true) > 0) return true;
+                if (sumRowLeft(i, true) > 0) return true;
+                if (shiftRowRight(i, true) > 0) return true;
+                if (sumRowRight(i, true) > 0) return true;
+                if (shiftColumnUp(i, true) > 0) return true;
+                if (sumColumnUp(i, true) > 0) return true;
+                if (shiftColumnDown(i, true) > 0) return true;
+                if (sumColumnDown(i, true) > 0) return true;
+            }
+            return false;
+        }
     }
 
-    private float shiftRowLeft(int i) {
+    private float shiftRowLeft(int i, boolean testMode) {
         float time = 0;
         for (int j = 0; j < 3; j++) {
             Fishka cell = fishki[j][i];
@@ -100,10 +114,14 @@ public class Numbers {
                 for (int k = j + 1; k < 4; k++) {
                     Fishka nextCell = fishki[k][i];
                     if (!nextCell.isEmpty()) {
-                        shiftCells(cell, nextCell, k - j, Direction.Left);
-                        time = Math.max(time, cell.getSubmittedShiftTime());
-                        time = Math.max(time, nextCell.getSubmittedShiftTime());
-                        break;
+                        if (!testMode) {
+                            shiftCells(cell, nextCell, k - j, Direction.Left);
+                            time = Math.max(time, cell.getSubmittedShiftTime());
+                            time = Math.max(time, nextCell.getSubmittedShiftTime());
+                            break;
+                        } else {
+                            return Float.MAX_VALUE;
+                        }
                     }
                 }
             }
@@ -119,15 +137,19 @@ public class Numbers {
         cell.addTask(new ShiftTask(shift, direction));
     }
 
-    private float sumRowLeft(int i) {
+    private float sumRowLeft(int i, boolean testMode) {
         float time = 0;
         for (int j = 0; j < 3; j++) {
             Fishka cell = fishki[j][i];
             Fishka nextCell = fishki[j + 1][i];
             if (!cell.isEmpty() && !nextCell.isEmpty() && cell.equals(nextCell)) {
-                sumCells(cell, nextCell, Direction.Left);
-                time = Math.max(time, cell.getSubmittedShiftTime());
-                time = Math.max(time, nextCell.getSubmittedShiftTime());
+                if (!testMode) {
+                    sumCells(cell, nextCell, Direction.Left);
+                    time = Math.max(time, cell.getSubmittedShiftTime());
+                    time = Math.max(time, nextCell.getSubmittedShiftTime());
+                } else {
+                    return Float.MAX_VALUE;
+                }
             }
         }
         return time;
@@ -143,7 +165,7 @@ public class Numbers {
         cell.addTask(new CompositeTask(new AddScoreTask(cell.getValue(), this), new ZoomTask()));
     }
 
-    private float shiftColumnDown(int i) {
+    private float shiftColumnDown(int i, boolean testMode) {
         float time = 0;
         for (int j = 3; j > 0; j--) {
             Fishka cell = fishki[i][j];
@@ -151,10 +173,14 @@ public class Numbers {
                 for (int k = j - 1; k >= 0; k--) {
                     Fishka nextCell = fishki[i][k];
                     if (!nextCell.isEmpty()) {
-                        shiftCells(cell, nextCell, j - k, Direction.Down);
-                        time = Math.max(time, cell.getSubmittedShiftTime());
-                        time = Math.max(time, nextCell.getSubmittedShiftTime());
-                        break;
+                        if (!testMode) {
+                            shiftCells(cell, nextCell, j - k, Direction.Down);
+                            time = Math.max(time, cell.getSubmittedShiftTime());
+                            time = Math.max(time, nextCell.getSubmittedShiftTime());
+                            break;
+                        } else {
+                            return Float.MAX_VALUE;
+                        }
                     }
                 }
             }
@@ -162,21 +188,25 @@ public class Numbers {
         return time;
     }
 
-    private float sumColumnDown(int i) {
+    private float sumColumnDown(int i, boolean testMode) {
         float time = 0;
         for (int j = 3; j > 0; j--) {
             Fishka cell = fishki[i][j];
             Fishka nextCell = fishki[i][j - 1];
             if (!cell.isEmpty() && !nextCell.isEmpty() && cell.equals(nextCell)) {
-                sumCells(cell, nextCell, Direction.Down);
-                time = Math.max(time, cell.getSubmittedShiftTime());
-                time = Math.max(time, nextCell.getSubmittedShiftTime());
+                if (!testMode) {
+                    sumCells(cell, nextCell, Direction.Down);
+                    time = Math.max(time, cell.getSubmittedShiftTime());
+                    time = Math.max(time, nextCell.getSubmittedShiftTime());
+                } else {
+                    return Float.MAX_VALUE;
+                }
             }
         }
         return time;
     }
 
-    private float shiftRowRight(int i) {
+    private float shiftRowRight(int i, boolean testMode) {
         float time = 0;
         for (int j = 3; j > 0; j--) {
             Fishka cell = fishki[j][i];
@@ -184,10 +214,14 @@ public class Numbers {
                 for (int k = j - 1; k >= 0; k--) {
                     Fishka nextCell = fishki[k][i];
                     if (!nextCell.isEmpty()) {
-                        shiftCells(cell, nextCell, j - k, Direction.Right);
-                        time = Math.max(time, cell.getSubmittedShiftTime());
-                        time = Math.max(time, nextCell.getSubmittedShiftTime());
-                        break;
+                        if (!testMode) {
+                            shiftCells(cell, nextCell, j - k, Direction.Right);
+                            time = Math.max(time, cell.getSubmittedShiftTime());
+                            time = Math.max(time, nextCell.getSubmittedShiftTime());
+                            break;
+                        } else {
+                            return Float.MAX_VALUE;
+                        }
                     }
                 }
             }
@@ -195,21 +229,25 @@ public class Numbers {
         return time;
     }
 
-    private float sumRowRight(int i) {
+    private float sumRowRight(int i, boolean testMode) {
         float time = 0;
         for (int j = 3; j > 0; j--) {
             Fishka cell = fishki[j][i];
             Fishka nextCell = fishki[j - 1][i];
             if (!cell.isEmpty() && !nextCell.isEmpty() && cell.equals(nextCell)) {
-                sumCells(cell, nextCell, Direction.Right);
-                time = Math.max(time, cell.getSubmittedShiftTime());
-                time = Math.max(time, nextCell.getSubmittedShiftTime());
+                if (!testMode) {
+                    sumCells(cell, nextCell, Direction.Right);
+                    time = Math.max(time, cell.getSubmittedShiftTime());
+                    time = Math.max(time, nextCell.getSubmittedShiftTime());
+                } else {
+                    return Float.MAX_VALUE;
+                }
             }
         }
         return time;
     }
 
-    private float shiftColumnUp(int i) {
+    private float shiftColumnUp(int i, boolean testMode) {
         float time = 0;
         for (int j = 0; j < 3; j++) {
             Fishka cell = fishki[i][j];
@@ -217,10 +255,14 @@ public class Numbers {
                 for (int k = j + 1; k < 4; k++) {
                     Fishka nextCell = fishki[i][k];
                     if (!nextCell.isEmpty()) {
-                        shiftCells(cell, nextCell, k - j, Direction.Up);
-                        time = Math.max(time, cell.getSubmittedShiftTime());
-                        time = Math.max(time, nextCell.getSubmittedShiftTime());
-                        break;
+                        if (!testMode) {
+                            shiftCells(cell, nextCell, k - j, Direction.Up);
+                            time = Math.max(time, cell.getSubmittedShiftTime());
+                            time = Math.max(time, nextCell.getSubmittedShiftTime());
+                            break;
+                        } else {
+                            return Float.MAX_VALUE;
+                        }
                     }
                 }
             }
@@ -228,15 +270,19 @@ public class Numbers {
         return time;
     }
 
-    private float sumColumnUp(int i) {
+    private float sumColumnUp(int i, boolean testMode) {
         float time = 0;
         for (int j = 0; j < 3; j++) {
             Fishka cell = fishki[i][j];
             Fishka nextCell = fishki[i][j + 1];
             if (!cell.isEmpty() && !nextCell.isEmpty() && cell.equals(nextCell)) {
-                sumCells(cell, nextCell, Direction.Up);
-                time = Math.max(time, cell.getSubmittedShiftTime());
-                time = Math.max(time, nextCell.getSubmittedShiftTime());
+                if (!testMode) {
+                    sumCells(cell, nextCell, Direction.Up);
+                    time = Math.max(time, cell.getSubmittedShiftTime());
+                    time = Math.max(time, nextCell.getSubmittedShiftTime());
+                } else {
+                    return Float.MAX_VALUE;
+                }
             }
         }
         return time;

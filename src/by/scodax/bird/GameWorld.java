@@ -23,18 +23,22 @@ public class GameWorld {
         return currentState == GameState.RUNNING;
     }
 
+    public boolean isGameOver() {
+        return currentState == GameState.RUNNING;
+    }
+
     public void restart() {
         numbers.reset();
         currentState = GameState.RUNNING;
     }
 
     public enum GameState {
-        RUNNING, IS_RESTART, EXIT
+        RUNNING, IS_RESTART, GAMEOVER, EXIT
     }
 
     public GameWorld(Numbers numbers) {
         this.numbers = numbers;
-        this.currentState = GameState.RUNNING;
+        this.currentState = GameState.GAMEOVER;
     }
 
     public void update(float delta) {
